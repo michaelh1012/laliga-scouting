@@ -17,7 +17,12 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0d0d1f;color:#fff;min-h
 .dash-title{font-size:2.4rem;font-weight:900;color:#fff;letter-spacing:3px;text-transform:uppercase;line-height:1.1}
 .dash-sub{font-size:.8rem;color:#666;margin-top:6px;letter-spacing:1.5px;text-transform:uppercase}
 .clubs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:940px;margin:0 auto}
-.club-card{background:#13132e;border:1.5px solid #252545;border-radius:14px;padding:18px 8px 14px;cursor:pointer;transition:all .2s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.club-card{position:relative;background:#13132e;border:1.5px solid #252545;border-radius:14px;padding:18px 8px 14px;cursor:pointer;transition:all .2s;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
+.pos-badge{position:absolute;top:7px;left:8px;min-width:20px;height:20px;padding:0 4px;border-radius:10px;font-size:.58rem;font-weight:900;display:flex;align-items:center;justify-content:center;line-height:1;color:#fff}
+.pos-badge.zone-ucl{background:#1a56db}
+.pos-badge.zone-uel{background:#b45309}
+.pos-badge.zone-mid{background:#374151}
+.pos-badge.zone-rel{background:#991b1b}
 .club-card:hover{border-color:#e8c840;background:#1c1c40;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.4)}
 .club-crest{width:62px;height:62px;object-fit:contain;filter:drop-shadow(0 2px 6px rgba(0,0,0,.5))}
 .club-name{font-size:.72rem;font-weight:600;color:#ccc;line-height:1.3}
@@ -333,7 +338,7 @@ input[type=file]{display:none}
 // Crests via Wikipedia SVG / Wikimedia Commons
 // ══════════════════════════════════════════
 const clubs = [
- {id:"atletico",name:"Atlético Madrid",color:"#c8102e",
+ {id:"atletico",name:"Atlético Madrid",color:"#c8102e",pos:3,
   crest:"https://upload.wikimedia.org/wikipedia/en/f/f4/Atletico_Madrid_2017_logo.svg",
   trainer:{name:"Diego Simeone",age:"54",style:"Compact defensive block, fast transitions",contract:"2027"},
   form:[{r:"W",s:"2-0",opp:"Getafe",h:true},{r:"W",s:"3-1",opp:"Betis",h:false},{r:"D",s:"1-1",opp:"Villarreal",h:true},{r:"W",s:"2-1",opp:"Osasuna",h:false},{r:"L",s:"0-2",opp:"Barcelona",h:false}],
@@ -349,7 +354,7 @@ const clubs = [
     {name:"De Paul",role:"Midfield engine",desc:["Covers ground, wins duels","Connector between lines","Threat from second line"]}
   ]},
 
- {id:"barcelona",name:"FC Barcelona",color:"#a50044",
+ {id:"barcelona",name:"FC Barcelona",color:"#a50044",pos:1,
   crest:"https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg",
   trainer:{name:"Hansi Flick",age:"60",style:"High press, high line, positional play",contract:"2027"},
   form:[{r:"W",s:"3-0",opp:"Sevilla",h:true},{r:"W",s:"4-1",opp:"Getafe",h:true},{r:"W",s:"2-0",opp:"Celta",h:false},{r:"D",s:"2-2",opp:"Atlético",h:true},{r:"W",s:"3-1",opp:"Real Madrid",h:false}],
@@ -365,9 +370,9 @@ const clubs = [
     {name:"Lewandowski",role:"Centre forward",desc:["Clinical finish, great positioning","Strong in pockets of space","Leader and pressing trigger"]}
   ]},
 
- {id:"realmadrid",name:"Real Madrid",color:"#00529f",
+ {id:"realmadrid",name:"Real Madrid",color:"#00529f",pos:2,
   crest:"https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg",
-  trainer:{name:"Xabi Alonso",age:"43",style:"Flexible 4-3-3, possession with fast transitions",contract:"2027"},
+  trainer:{name:"Álvaro Arbeloa",age:"43",style:"Flexible 4-3-3, possession with fast transitions",contract:"2027"},
   form:[{r:"W",s:"2-1",opp:"Mallorca",h:true},{r:"W",s:"3-0",opp:"Rayo",h:true},{r:"L",s:"0-1",opp:"Alavés",h:false},{r:"W",s:"4-0",opp:"Osasuna",h:true},{r:"W",s:"2-0",opp:"Levante",h:false}],
   lineup:{formation:"4-3-3",players:[
     {num:1,name:"Courtois",pos:"GK",x:8,y:50},
@@ -381,7 +386,7 @@ const clubs = [
     {name:"Valverde",role:"Physical engine",desc:["High intensity, 12km+ per game","Pressing trigger & ball winner","Dangerous from second line"]}
   ]},
 
- {id:"villarreal",name:"Villarreal CF",color:"#ffcc00",
+ {id:"villarreal",name:"Villarreal CF",color:"#ffcc00",pos:5,
   crest:"https://upload.wikimedia.org/wikipedia/en/b/b9/Villarreal_CF_logo-en.svg",
   trainer:{name:"Marcelino",age:"59",style:"Solid 4-4-2, counter-oriented, set piece quality",contract:"2026"},
   form:[{r:"W",s:"3-1",opp:"Osasuna",h:true},{r:"D",s:"1-1",opp:"Getafe",h:false},{r:"W",s:"2-0",opp:"Levante",h:true},{r:"W",s:"1-0",opp:"Espanyol",h:false},{r:"L",s:"0-1",opp:"Athletic",h:true}],
@@ -397,7 +402,7 @@ const clubs = [
     {name:"Danjuma",role:"Direct winger",desc:["Fast, switches flanks","Clinical finish","1v1 in tight space"]}
   ]},
 
- {id:"athleticbilbao",name:"Athletic Bilbao",color:"#c8102e",
+ {id:"athleticbilbao",name:"Athletic Bilbao",color:"#c8102e",pos:4,
   crest:"https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_de_Bilbao_logo.svg",
   trainer:{name:"Ernesto Valverde",age:"61",style:"Compact 4-2-3-1, physically intense, pressing football",contract:"2026"},
   form:[{r:"W",s:"2-0",opp:"Elche",h:true},{r:"L",s:"0-1",opp:"Real Sociedad",h:false},{r:"W",s:"3-1",opp:"Alavés",h:true},{r:"W",s:"2-1",opp:"Getafe",h:false},{r:"D",s:"1-1",opp:"Sevilla",h:true}],
@@ -414,9 +419,9 @@ const clubs = [
     {name:"Vesga",role:"Defensive midfielder",desc:["Ball winner, duels","Defensively relentless","Link between defence and attack"]}
   ]},
 
- {id:"realsociedad",name:"Real Sociedad",color:"#0057a8",
+ {id:"realsociedad",name:"Real Sociedad",color:"#0057a8",pos:6,
   crest:"https://upload.wikimedia.org/wikipedia/en/f/f1/Real_Sociedad_logo.svg",
-  trainer:{name:"Imanol Alguacil",age:"54",style:"Structured 4-3-3, positional play, high press",contract:"2026"},
+  trainer:{name:"Pellegrino Matarazzo",age:"49",style:"Structured 4-3-3, positional play, high press",contract:"2027"},
   form:[{r:"W",s:"2-1",opp:"Levante",h:true},{r:"W",s:"1-0",opp:"Rayo",h:false},{r:"D",s:"0-0",opp:"Betis",h:true},{r:"L",s:"1-2",opp:"Villarreal",h:false},{r:"W",s:"3-0",opp:"Oviedo",h:true}],
   lineup:{formation:"4-3-3",players:[
     {num:1,name:"Remiro",pos:"GK",x:8,y:50},
@@ -430,7 +435,7 @@ const clubs = [
     {name:"Kubo",role:"Right winger",desc:["Fast, creative, unpredictable","Combination play in half-spaces","Strong vs deep defences"]}
   ]},
 
- {id:"betis",name:"Real Betis",color:"#00954c",
+ {id:"betis",name:"Real Betis",color:"#00954c",pos:7,
   crest:"https://upload.wikimedia.org/wikipedia/en/1/13/Real_betis_logo.svg",
   trainer:{name:"Manuel Pellegrini",age:"71",style:"Possession-based 4-2-3-1, technical build-up",contract:"2026"},
   form:[{r:"D",s:"1-1",opp:"Getafe",h:false},{r:"W",s:"2-0",opp:"Oviedo",h:true},{r:"W",s:"3-2",opp:"Osasuna",h:false},{r:"L",s:"0-2",opp:"Atlético",h:true},{r:"W",s:"1-0",opp:"Elche",h:true}],
@@ -447,7 +452,7 @@ const clubs = [
     {name:"Vitor Roque",role:"Centre forward",desc:["Physical, strong in the air","Pulls into space, technical","Link-up play for teammates"]}
   ]},
 
- {id:"osasuna",name:"CA Osasuna",color:"#c8102e",
+ {id:"osasuna",name:"CA Osasuna",color:"#c8102e",pos:9,
   crest:"https://upload.wikimedia.org/wikipedia/en/8/89/C.A._Osasuna_logo.svg",
   trainer:{name:"Alessio Lisci",age:"38",style:"Robust 4-4-2, intense pressing, set piece quality",contract:"2026"},
   form:[{r:"L",s:"0-1",opp:"Betis",h:true},{r:"D",s:"1-1",opp:"Espanyol",h:false},{r:"W",s:"2-0",opp:"Levante",h:true},{r:"L",s:"0-2",opp:"Real Madrid",h:true},{r:"W",s:"1-0",opp:"Elche",h:false}],
@@ -463,7 +468,7 @@ const clubs = [
     {name:"David García",role:"Defensive leader",desc:["Solid centre-back","Anticipation & positioning","Captain of the defence"]}
   ]},
 
- {id:"girona",name:"Girona FC",color:"#c8102e",
+ {id:"girona",name:"Girona FC",color:"#c8102e",pos:10,
   crest:"https://upload.wikimedia.org/wikipedia/en/6/6e/Girona_FC_Badge.svg",
   trainer:{name:"Míchel",age:"49",style:"High-intensity pressing 4-3-3, aggressive and vertical",contract:"2026"},
   form:[{r:"W",s:"2-1",opp:"Mallorca",h:true},{r:"W",s:"3-0",opp:"Elche",h:false},{r:"D",s:"1-1",opp:"Levante",h:true},{r:"W",s:"4-2",opp:"Alavés",h:false},{r:"L",s:"0-1",opp:"Villarreal",h:true}],
@@ -479,7 +484,7 @@ const clubs = [
     {name:"Romeu",role:"Defensive six",desc:["Ball winner, coverage","Simple forward passing","Link between defence and midfield"]}
   ]},
 
- {id:"getafe",name:"Getafe CF",color:"#003087",
+ {id:"getafe",name:"Getafe CF",color:"#003087",pos:14,
   crest:"https://upload.wikimedia.org/wikipedia/en/3/35/Getafe_logo.svg",
   trainer:{name:"José Bordalás",age:"61",style:"Deep 4-4-2, aggressive pressing, disciplined defending",contract:"2026"},
   form:[{r:"L",s:"0-1",opp:"Sociedad",h:true},{r:"L",s:"0-2",opp:"Athletic",h:false},{r:"D",s:"0-0",opp:"Girona",h:true},{r:"W",s:"1-0",opp:"Elche",h:false},{r:"L",s:"0-1",opp:"Betis",h:true}],
@@ -495,9 +500,9 @@ const clubs = [
     {name:"Arambarri",role:"Defensive six",desc:["Tackling machine","Counter protection","Simple passing"]}
   ]},
 
- {id:"alavesdeportivo",name:"Deportivo Alavés",color:"#1d6eb3",
+ {id:"alavesdeportivo",name:"Deportivo Alavés",color:"#1d6eb3",pos:17,
   crest:"https://upload.wikimedia.org/wikipedia/en/0/04/Deportivo_Alav%C3%A9s_logo_%282020%29.svg",
-  trainer:{name:"Eduardo Coudet",age:"50",style:"Defensively oriented 4-4-2, counter-focused",contract:"2026"},
+  trainer:{name:"Quique Sánchez Flores",age:"60",style:"Defensively oriented 4-4-2, counter-focused",contract:"2026"},
   form:[{r:"L",s:"0-2",opp:"Barcelona",h:true},{r:"W",s:"1-0",opp:"Oviedo",h:false},{r:"L",s:"0-3",opp:"Athletic",h:true},{r:"D",s:"1-1",opp:"Levante",h:false},{r:"W",s:"1-0",opp:"Real Madrid",h:true}],
   lineup:{formation:"4-4-2",players:[
     {num:1,name:"Sivera",pos:"GK",x:8,y:50},
@@ -511,7 +516,7 @@ const clubs = [
     {name:"Guevara",role:"Six",desc:["Closes spaces, simple passing","Defensively solid","Link defence to attack"]}
   ]},
 
- {id:"espanyol",name:"RCD Espanyol",color:"#003087",
+ {id:"espanyol",name:"RCD Espanyol",color:"#003087",pos:16,
   crest:"https://upload.wikimedia.org/wikipedia/en/7/76/RCD_Espanyol_logo.svg",
   trainer:{name:"Manolo González",age:"54",style:"Defensively compact, fast transitions, 4-4-2",contract:"2026"},
   form:[{r:"L",s:"0-1",opp:"Atlético",h:true},{r:"D",s:"1-1",opp:"Osasuna",h:true},{r:"L",s:"0-2",opp:"Girona",h:false},{r:"W",s:"2-0",opp:"Levante",h:true},{r:"D",s:"0-0",opp:"Rayo",h:false}],
@@ -527,7 +532,7 @@ const clubs = [
     {name:"Joselu",role:"Centre forward",desc:["Physical, strong in the air","Back-to-goal target","Experienced finisher"]}
   ]},
 
- {id:"mallorca",name:"RCD Mallorca",color:"#c8102e",
+ {id:"mallorca",name:"RCD Mallorca",color:"#c8102e",pos:11,
   crest:"https://upload.wikimedia.org/wikipedia/en/3/3b/RCD_Mallorca_logo.svg",
   trainer:{name:"Martín Demichelis",age:"44",style:"Solid 4-1-4-1, counter-oriented",contract:"2026"},
   form:[{r:"W",s:"1-0",opp:"Oviedo",h:true},{r:"D",s:"0-0",opp:"Getafe",h:false},{r:"W",s:"2-1",opp:"Elche",h:true},{r:"L",s:"0-2",opp:"Girona",h:true},{r:"W",s:"3-0",opp:"Levante",h:false}],
@@ -544,7 +549,7 @@ const clubs = [
     {name:"Valjent",role:"Centre-back",desc:["Anticipation, positioning","Strong aerial wins","Defensive anchor"]}
   ]},
 
- {id:"celtavigo",name:"Celta Vigo",color:"#6ecff6",
+ {id:"celtavigo",name:"Celta Vigo",color:"#6ecff6",pos:8,
   crest:"https://upload.wikimedia.org/wikipedia/en/3/38/RC_Celta_de_Vigo_logo.svg",
   trainer:{name:"Claudio Giráldez",age:"37",style:"Clear identity with defined patterns, 5-2-3 pressing",contract:"2028"},
   form:[{r:"W",s:"4-2",opp:"Oviedo",h:true},{r:"L",s:"1-3",opp:"Barcelona",h:false},{r:"W",s:"2-0",opp:"Alavés",h:true},{r:"D",s:"1-1",opp:"Rayo",h:false},{r:"W",s:"3-1",opp:"Levante",h:true}],
@@ -561,7 +566,7 @@ const clubs = [
     {name:"B. Iglesias",role:"Target player",desc:["11 goals in La Liga","Dynamic between lines for steil-klatsch","Target in the box"]}
   ]},
 
- {id:"rayo",name:"Rayo Vallecano",color:"#c8102e",
+ {id:"rayo",name:"Rayo Vallecano",color:"#c8102e",pos:12,
   crest:"https://upload.wikimedia.org/wikipedia/en/e/ef/Rayo_Vallecano_logo.svg",
   trainer:{name:"Íñigo Pérez",age:"40",style:"Aggressive pressing 4-3-3, high line, intense",contract:"2026"},
   form:[{r:"W",s:"2-1",opp:"Oviedo",h:true},{r:"D",s:"0-0",opp:"Espanyol",h:true},{r:"L",s:"0-2",opp:"Athletic",h:false},{r:"W",s:"3-0",opp:"Getafe",h:true},{r:"L",s:"1-2",opp:"Celta",h:true}],
@@ -577,9 +582,9 @@ const clubs = [
     {name:"Camello",role:"Centre forward",desc:["Young and energetic striker","Pressing from the front","Improving goal numbers"]}
   ]},
 
- {id:"sevilla",name:"Sevilla FC",color:"#c8102e",
+ {id:"sevilla",name:"Sevilla FC",color:"#c8102e",pos:13,
   crest:"https://upload.wikimedia.org/wikipedia/en/3/3b/Sevilla_FC_logo.svg",
-  trainer:{name:"Matías Almeyda",age:"51",style:"Pressing-oriented, aggressive 4-3-3, intense gegenpressing",contract:"2027"},
+  trainer:{name:"Luis García Plaza",age:"56",style:"Pressing-oriented, aggressive 4-3-3, intense gegenpressing",contract:"2026"},
   form:[{r:"L",s:"0-2",opp:"Atlético",h:true},{r:"D",s:"1-1",opp:"Athletic",h:false},{r:"W",s:"2-0",opp:"Levante",h:true},{r:"L",s:"1-3",opp:"Girona",h:false},{r:"D",s:"0-0",opp:"Rayo",h:true}],
   lineup:{formation:"4-3-3",players:[
     {num:1,name:"Dmitrovic",pos:"GK",x:8,y:50},
@@ -593,9 +598,9 @@ const clubs = [
     {name:"Gudelj",role:"Centre-back",desc:["Solid in duels","Good aerial ability","Organiser of defensive line"]}
   ]},
 
- {id:"valencia",name:"Valencia CF",color:"#f7a500",
+ {id:"valencia",name:"Valencia CF",color:"#f7a500",pos:15,
   crest:"https://upload.wikimedia.org/wikipedia/en/c/ce/Valenciacf.svg",
-  trainer:{name:"Rubén Baraja",age:"49",style:"Structured 4-3-3, midfield pressing, tactical discipline",contract:"2026"},
+  trainer:{name:"Carlos Corberán",age:"42",style:"Structured 4-3-3, midfield pressing, tactical discipline",contract:"2027"},
   form:[{r:"D",s:"1-1",opp:"Girona",h:true},{r:"L",s:"0-2",opp:"Betis",h:false},{r:"W",s:"2-0",opp:"Oviedo",h:true},{r:"D",s:"0-0",opp:"Mallorca",h:false},{r:"L",s:"1-3",opp:"Atlético",h:true}],
   lineup:{formation:"4-3-3",players:[
     {num:1,name:"Mamardashvili",pos:"GK",x:8,y:50},
@@ -609,7 +614,7 @@ const clubs = [
     {name:"Gayà",role:"Left back",desc:["Offensively strong, crossing & shooting","Defensively experienced","Captain, leader"]}
   ]},
 
- {id:"levante",name:"Levante UD",color:"#c8102e",
+ {id:"levante",name:"Levante UD",color:"#c8102e",pos:18,
   crest:"https://upload.wikimedia.org/wikipedia/en/f/f7/Levante_UD_logo.svg",
   trainer:{name:"Luís Castro",age:"63",style:"Balanced 4-4-2, pressing & compact structure",contract:"2026"},
   form:[{r:"L",s:"0-4",opp:"Girona",h:false},{r:"L",s:"0-3",opp:"Mallorca",h:true},{r:"D",s:"1-1",opp:"Alavés",h:true},{r:"L",s:"0-2",opp:"Osasuna",h:false},{r:"L",s:"0-2",opp:"Espanyol",h:false}],
@@ -625,7 +630,7 @@ const clubs = [
     {name:"Postigo",role:"Centre-back",desc:["Leader of the backline","Strong aerially","Organises defensive shape"]}
   ]},
 
- {id:"elche",name:"Elche CF",color:"#007b3a",
+ {id:"elche",name:"Elche CF",color:"#007b3a",pos:19,
   crest:"https://upload.wikimedia.org/wikipedia/en/8/87/Elche_CF_logo.svg",
   trainer:{name:"Eder Sarabia",age:"43",style:"Organized 4-3-3, defensive stability, direct play",contract:"2026"},
   form:[{r:"L",s:"0-2",opp:"Osasuna",h:true},{r:"L",s:"0-1",opp:"Athletic",h:false},{r:"L",s:"0-2",opp:"Betis",h:true},{r:"L",s:"1-2",opp:"Mallorca",h:false},{r:"W",s:"2-0",opp:"Levante",h:true}],
@@ -641,7 +646,7 @@ const clubs = [
     {name:"Mascarell",role:"Midfielder",desc:["Experienced, controls tempo","Defensive presence","Simple but effective passing"]}
   ]},
 
- {id:"oviedo",name:"Real Oviedo",color:"#003087",
+ {id:"oviedo",name:"Real Oviedo",color:"#003087",pos:20,
   crest:"https://upload.wikimedia.org/wikipedia/en/4/4e/Real_Oviedo_logo.svg",
   trainer:{name:"Guillermo Almada",age:"56",style:"Organized 4-4-2, defensive solidity, set pieces",contract:"2026"},
   form:[{r:"L",s:"0-2",opp:"Celta",h:false},{r:"L",s:"0-1",opp:"Alavés",h:true},{r:"L",s:"0-2",opp:"Valencia",h:false},{r:"L",s:"0-1",opp:"Mallorca",h:false},{r:"D",s:"0-0",opp:"Getafe",h:true}],
@@ -820,9 +825,12 @@ function showDashboard(){
 function buildDashboard(){
   const grid=document.getElementById('clubsGrid');
   clubs.forEach(c=>{
+    const pos=c.pos;
+    const zone=pos<=4?'zone-ucl':pos<=6?'zone-uel':pos<=16?'zone-mid':'zone-rel';
     const card=document.createElement('div');
     card.className='club-card';
     card.innerHTML=`
+      <div class="pos-badge ${zone}">${pos}</div>
       <img class="club-crest" src="${c.crest}" alt="${c.name}" onerror="this.style.opacity='.3'">
       <div class="club-name">${c.name}</div>
       <div class="club-form-row">${c.form.map(f=>`<div class="cf ${f.r}" title="${f.s}">${f.r}</div>`).join('')}</div>`;
