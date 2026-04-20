@@ -445,8 +445,6 @@ input[type=file]{display:none}
 </div>
 
 <script>
-// ── Startup diagnostics ───────────────────
-console.log("Gefundene Team-ID:", localStorage.getItem('selectedTeamId'));
 // ══════════════════════════════════════════
 // CLUB DATA – La Liga 2025/26 correct clubs
 // Crests via Wikipedia SVG / Wikimedia Commons
@@ -825,104 +823,81 @@ function buildLast5(form){
 let squadData={};
 const squadReady=fetch('squads.json')
   .then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
-  .then(d=>{squadData=d;console.log('[squads] geladen –',Object.keys(d).length,'Teams verfügbar');})
-  .catch(e=>console.warn('[squads] Fehler beim Laden:',e.message));
+  .then(d=>{squadData=d;})
+  .catch(e=>console.warn('[squads] Ladefehler:',e.message));
 
 function calcAge(dob){
   if(!dob)return null;
   const b=new Date(dob),t=new Date();
   let a=t.getFullYear()-b.getFullYear();
-  const m=t.getMonth()-b.getMonth();
-  if(m<0||(m===0&&t.getDate()<b.getDate()))a--;
+  if(t.getMonth()-b.getMonth()<0||(t.getMonth()===b.getMonth()&&t.getDate()<b.getDate()))a--;
   return a;
 }
 
-function lsKey(clubId,slot){return `pf-${clubId}-${slot}`;}
+function lsKey(teamId,slot){return `pf-${teamId}-${slot}`;}
 
-function buildField(lineup,color,clubId){
+function buildField(lineup,color,teamId){
   const container=document.getElementById('playersOnField');
   container.innerHTML='';
   document.getElementById('formationBadge').textContent=lineup.formation;
-  const storedId=localStorage.getItem('selectedTeamId');
-  const resolvedId=(clubId||storedId||'').trim().toLowerCase();
-  console.log('[buildField] clubId param:',clubId,'| localStorage selectedTeamId:',storedId,'| resolvedId:',resolvedId);
-  console.log('[buildField] squads.json Keys:',Object.keys(squadData));
 
-  // 1) exact match (case-insensitive, trimmed)
-  const allKeys=Object.keys(squadData);
-  let matchedKey=allKeys.find(k=>k.trim().toLowerCase()===resolvedId);
-
-  // 2) fallback: partial substring match
-  if(!matchedKey&&resolvedId){
-    matchedKey=allKeys.find(k=>k.toLowerCase().includes(resolvedId)||resolvedId.includes(k.toLowerCase()));
-  }
-
-  if(matchedKey){
-    console.log('Match gefunden! Nutze Key:',matchedKey);
-  } else {
-    console.warn('[buildField] Kein Match für resolvedId:',resolvedId);
-  }
-
-  const squad=(matchedKey?squadData[matchedKey]:{}).players||[];
-  console.log('[buildField] Spieler im Kader:',squad.length);
-
-  // On-screen error if chain is broken
   const errEl=document.getElementById('squadError');
+  const effectiveId=(teamId||localStorage.getItem('selectedTeam')||'').trim();
+
+  // ── Guard: no team selected ───────────────────────────────────────────────
+  if(!effectiveId){
+    if(errEl){errEl.textContent='⚠ Kein Team ausgewählt – bitte zuerst ein Team auf der Startseite wählen.';errEl.style.display='block';}
+    return;
+  }
+
+  // ── Key lookup (exact, case-insensitive) ──────────────────────────────────
+  const keys=Object.keys(squadData);
+  const matchedKey=keys.find(k=>k.toLowerCase()===effectiveId.toLowerCase())||null;
+  console.log('[buildField] Team:',effectiveId,'→ Key:',matchedKey,'| Kader:',matchedKey?squadData[matchedKey].players.length:0);
+
   if(errEl){
-    if(!resolvedId){
-      errEl.textContent='⚠ Kein Team im localStorage gefunden (selectedTeamId fehlt).';
-      errEl.style.display='block';
-    } else if(!matchedKey){
-      errEl.textContent=`⚠ Kein Match für "${resolvedId}" in squads.json. Verfügbare Keys: ${allKeys.join(', ')||'(squads.json leer – fetch fehlgeschlagen?)'}`;
+    if(!matchedKey){
+      errEl.textContent=`⚠ Team-ID "${effectiveId}" nicht in squads.json. Verfügbare Keys: ${keys.join(', ')||'(leer – läuft ein lokaler Server?)'}`;
       errEl.style.display='block';
     } else {
       errEl.style.display='none';
     }
   }
-  // group by position for optgroup ordering
+
+  const squad=matchedKey?(squadData[matchedKey].players||[]):[];
+  const slotKey=matchedKey||effectiveId;
+
+  // ── Build position groups ─────────────────────────────────────────────────
   const posOrder=['Goalkeeper','Defence','Midfield','Offence'];
   const byPos={};
   squad.forEach(p=>{const k=p.position||'Other';(byPos[k]=byPos[k]||[]).push(p);});
 
+  // ── Render each player slot ───────────────────────────────────────────────
   lineup.players.forEach((p,idx)=>{
-    const slotKey=matchedKey||resolvedId;
     const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
     const dispNum=saved.num!==undefined?saved.num:p.num;
-    const dispH=saved.height||'';
     const selName=saved.name||'';
+    const dispH=saved.height||'';
+
+    let opts=`<option value="">— Name —</option>`;
+    posOrder.forEach(pos=>{
+      const list=byPos[pos];if(!list||!list.length)return;
+      opts+=`<optgroup label="${pos}">`;
+      list.forEach(pl=>{opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${pl.name===selName?'selected':''}>${pl.name}</option>`;});
+      opts+=`</optgroup>`;
+    });
+    Object.keys(byPos).filter(k=>!posOrder.includes(k)).forEach(pos=>{
+      byPos[pos].forEach(pl=>{opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${pl.name===selName?'selected':''}>${pl.name}</option>`;});
+    });
+
+    const sp=squad.find(x=>x.name===selName);
+    const age=sp?calcAge(sp.dateOfBirth):null;
+    const ageStr=age!==null?`(Alter: ${age})`:'';
 
     const div=document.createElement('div');
     div.className='player-on-field';
-    div.style.left=p.x+'%';
-    div.style.top=p.y+'%';
+    div.style.left=p.x+'%';div.style.top=p.y+'%';
     div.style.setProperty('--cc',color);
-
-    // build select options
-    let opts=`<option value="">— Name —</option>`;
-    posOrder.forEach(pos=>{
-      const list=byPos[pos];
-      if(!list||!list.length)return;
-      opts+=`<optgroup label="${pos}">`;
-      list.forEach(pl=>{
-        const sel=(pl.name===selName)?'selected':'';
-        opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${sel}>${pl.name}</option>`;
-      });
-      opts+=`</optgroup>`;
-    });
-    // players not in standard positions
-    Object.keys(byPos).filter(k=>!posOrder.includes(k)).forEach(pos=>{
-      byPos[pos].forEach(pl=>{
-        const sel=(pl.name===selName)?'selected':'';
-        opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${sel}>${pl.name}</option>`;
-      });
-    });
-
-    const ageStr=selName?(()=>{
-      const pl=squad.find(x=>x.name===selName);
-      const a=pl?calcAge(pl.dateOfBirth):null;
-      return a!==null?`(Alter: ${a})`:'';
-    })():'';
-
     div.innerHTML=`
       <div style="position:relative;display:inline-block">
         <div class="player-circle" id="pc-${slotKey}-${idx}" onclick="openPEM('${slotKey}',${idx})">
@@ -940,34 +915,33 @@ function buildField(lineup,color,clubId){
   });
 }
 
-function onPlayerSelect(sel,clubId,idx){
+function onPlayerSelect(sel,slotKey,idx){
   const opt=sel.options[sel.selectedIndex];
-  const dob=opt?opt.getAttribute('data-dob'):'';
-  const age=calcAge(dob);
-  document.getElementById(`page-${clubId}-${idx}`).textContent=age!==null?`(Alter: ${age})`:'';
-  savePlayerMeta(clubId,idx);
+  const age=calcAge(opt?opt.getAttribute('data-dob'):'');
+  document.getElementById(`page-${slotKey}-${idx}`).textContent=age!==null?`(Alter: ${age})`:'';
+  savePlayerMeta(slotKey,idx);
 }
 
-function savePlayerMeta(clubId,idx){
-  const sel=document.getElementById(`psel-${clubId}-${idx}`);
-  const h=document.getElementById(`ph-${clubId}-${idx}`);
-  const numEl=document.getElementById(`pnum-${clubId}-${idx}`);
-  const saved=JSON.parse(localStorage.getItem(lsKey(clubId,idx))||'{}');
+function savePlayerMeta(slotKey,idx){
+  const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
+  const sel=document.getElementById(`psel-${slotKey}-${idx}`);
+  const h=document.getElementById(`ph-${slotKey}-${idx}`);
+  const numEl=document.getElementById(`pnum-${slotKey}-${idx}`);
   if(sel)saved.name=sel.value;
   if(h)saved.height=h.value;
   if(numEl)saved.num=numEl.textContent;
-  localStorage.setItem(lsKey(clubId,idx),JSON.stringify(saved));
+  localStorage.setItem(lsKey(slotKey,idx),JSON.stringify(saved));
 }
 
 // ── Player edit modal (Trikotnummer + Größe) ──────────────────────────────────
-let _pemClub='',_pemIdx=0;
+let _pemSlot='',_pemIdx=0;
 
-function openPEM(clubId,idx){
-  _pemClub=clubId;_pemIdx=idx;
-  const saved=JSON.parse(localStorage.getItem(lsKey(clubId,idx))||'{}');
+function openPEM(slotKey,idx){
+  _pemSlot=slotKey;_pemIdx=idx;
+  const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
   document.getElementById('pemNum').value=saved.num||'';
   document.getElementById('pemHeight').value=saved.height||'';
-  const sel=document.getElementById(`psel-${clubId}-${idx}`);
+  const sel=document.getElementById(`psel-${slotKey}-${idx}`);
   document.getElementById('pemTitle').textContent=sel&&sel.value?sel.value:'Spieler bearbeiten';
   document.getElementById('pemOverlay').classList.add('open');
 }
@@ -977,22 +951,18 @@ function closePEM(){document.getElementById('pemOverlay').classList.remove('open
 function savePEM(){
   const num=document.getElementById('pemNum').value.trim();
   const height=document.getElementById('pemHeight').value.trim();
-  const saved=JSON.parse(localStorage.getItem(lsKey(_pemClub,_pemIdx))||'{}');
+  const saved=JSON.parse(localStorage.getItem(lsKey(_pemSlot,_pemIdx))||'{}');
   if(num)saved.num=num;
   if(height)saved.height=height;
-  localStorage.setItem(lsKey(_pemClub,_pemIdx),JSON.stringify(saved));
-  // update visible badge and height input
-  const numEl=document.getElementById(`pnum-${_pemClub}-${_pemIdx}`);
-  const hEl=document.getElementById(`ph-${_pemClub}-${_pemIdx}`);
+  localStorage.setItem(lsKey(_pemSlot,_pemIdx),JSON.stringify(saved));
+  const numEl=document.getElementById(`pnum-${_pemSlot}-${_pemIdx}`);
+  const hEl=document.getElementById(`ph-${_pemSlot}-${_pemIdx}`);
   if(numEl&&num)numEl.textContent=num;
   if(hEl&&height)hEl.value=height;
   closePEM();
 }
 
-// close modal on overlay click
-document.addEventListener('click',e=>{
-  if(e.target.id==='pemOverlay')closePEM();
-});
+document.addEventListener('click',e=>{if(e.target.id==='pemOverlay')closePEM();});
 
 function buildKeyPlayers(players,color){
   const col=document.getElementById('keyPlayersCol');
@@ -1046,8 +1016,7 @@ function loadImgInto(event,wrapId,phId){
 
 async function openClub(club){
   currentClub=club;
-  localStorage.setItem('selectedTeamId',club.id);
-  console.log('[openClub] selectedTeamId =',club.id);
+  localStorage.setItem('selectedTeam',club.id);
   const c=club.color;
   document.querySelectorAll('.tp-page').forEach(p=>p.style.setProperty('--cc',c));
   ['clubTitle','clubTitle2','clubTitle3'].forEach(id=>document.getElementById(id).textContent=club.name.toUpperCase());
@@ -1091,11 +1060,7 @@ function buildDashboard(){
       <img class="club-crest" src="${c.crest}" alt="${c.name}" onerror="this.style.opacity='.3'">
       <div class="club-name">${c.name}</div>
       <div class="club-form-row">${c.form.map(f=>`<div class="cf ${f.r}" title="${f.s}">${f.r}</div>`).join('')}</div>`;
-    card.onclick=()=>{
-      localStorage.setItem('selectedTeamId',c.id);
-      console.log('[Card] selectedTeamId gesetzt:',c.id);
-      openClub(c);
-    };
+    card.onclick=()=>{localStorage.setItem('selectedTeam',c.id);openClub(c);};
     grid.appendChild(card);
   });
 }
