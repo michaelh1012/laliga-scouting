@@ -126,6 +126,24 @@ input[type=file]{display:none}
 .player-num{position:absolute;top:-4px;right:6px;background:var(--cc,#1a3a6b);color:#fff;border-radius:50%;width:17px;height:17px;font-size:.55rem;font-weight:700;display:flex;align-items:center;justify-content:center;border:1px solid #fff;z-index:2}
 .player-name-tag{background:rgba(0,0,0,.75);color:#fff;font-size:.56rem;font-weight:700;padding:2px 5px;border-radius:3px;white-space:nowrap;display:inline-block;max-width:70px;overflow:hidden;text-overflow:ellipsis}
 .player-pos{font-size:.5rem;color:rgba(255,255,255,.75)}
+.player-select{font-size:.5rem;width:72px;border:none;border-radius:3px;background:rgba(0,0,0,.78);color:#fff;padding:2px 3px;cursor:pointer;outline:none;text-align:center}
+.player-select option{background:#222;color:#fff}
+.player-age{font-size:.48rem;color:rgba(255,255,255,.82);margin-top:1px;text-align:center;min-height:8px;white-space:nowrap}
+.player-meta{display:flex;gap:3px;justify-content:center;margin-top:2px}
+.player-meta input{width:30px;font-size:.48rem;border:none;border-radius:2px;background:rgba(0,0,0,.6);color:#fff;text-align:center;padding:1px 3px;outline:none}
+.player-meta input::placeholder{color:rgba(255,255,255,.45)}
+#pemOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center}
+#pemOverlay.open{display:flex}
+.pem-box{background:#fff;border-radius:10px;padding:22px 24px;min-width:230px;box-shadow:0 6px 28px rgba(0,0,0,.35)}
+.pem-box h4{margin:0 0 14px;font-size:.85rem;color:#222;font-weight:800}
+.pem-row{display:flex;flex-direction:column;gap:3px;margin-bottom:10px}
+.pem-row label{font-size:.65rem;color:#666;font-weight:700;text-transform:uppercase;letter-spacing:.5px}
+.pem-row input{border:1.5px solid #ddd;border-radius:6px;padding:7px 9px;font-size:.82rem;outline:none}
+.pem-row input:focus{border-color:var(--cc,#1a3a6b)}
+.pem-btns{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+.pem-btns button{padding:7px 16px;border:none;border-radius:6px;cursor:pointer;font-size:.75rem;font-weight:700}
+.pem-save{background:var(--cc,#1a3a6b);color:#fff}
+.pem-cancel{background:#eee;color:#444}
 
 /* Lineup alts */
 .lineup-alts{margin-top:10px;border:1.5px solid var(--cc,#1a3a6b);border-radius:8px;padding:11px 13px}
@@ -800,39 +818,139 @@ function buildLast5(form){
   });
 }
 
-function buildField(lineup,color){
+// ── Squad data ───────────────────────────────────────────────────────────────
+let squadData={};
+fetch('squads.json').then(r=>r.json()).then(d=>{squadData=d;}).catch(()=>{});
+
+function calcAge(dob){
+  if(!dob)return null;
+  const b=new Date(dob),t=new Date();
+  let a=t.getFullYear()-b.getFullYear();
+  const m=t.getMonth()-b.getMonth();
+  if(m<0||(m===0&&t.getDate()<b.getDate()))a--;
+  return a;
+}
+
+function lsKey(clubId,slot){return `pf-${clubId}-${slot}`;}
+
+function buildField(lineup,color,clubId){
   const container=document.getElementById('playersOnField');
   container.innerHTML='';
   document.getElementById('formationBadge').textContent=lineup.formation;
-  lineup.players.forEach(p=>{
+  const squad=(squadData[clubId]||{}).players||[];
+  // group by position for optgroup ordering
+  const posOrder=['Goalkeeper','Defence','Midfield','Offence'];
+  const byPos={};
+  squad.forEach(p=>{const k=p.position||'Other';(byPos[k]=byPos[k]||[]).push(p);});
+
+  lineup.players.forEach((p,idx)=>{
+    const saved=JSON.parse(localStorage.getItem(lsKey(clubId,idx))||'{}');
+    const dispNum=saved.num!==undefined?saved.num:p.num;
+    const dispH=saved.height||'';
+    const selName=saved.name||'';
+
     const div=document.createElement('div');
     div.className='player-on-field';
     div.style.left=p.x+'%';
     div.style.top=p.y+'%';
     div.style.setProperty('--cc',color);
+
+    // build select options
+    let opts=`<option value="">— Name —</option>`;
+    posOrder.forEach(pos=>{
+      const list=byPos[pos];
+      if(!list||!list.length)return;
+      opts+=`<optgroup label="${pos}">`;
+      list.forEach(pl=>{
+        const sel=(pl.name===selName)?'selected':'';
+        opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${sel}>${pl.name}</option>`;
+      });
+      opts+=`</optgroup>`;
+    });
+    // players not in standard positions
+    Object.keys(byPos).filter(k=>!posOrder.includes(k)).forEach(pos=>{
+      byPos[pos].forEach(pl=>{
+        const sel=(pl.name===selName)?'selected':'';
+        opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${sel}>${pl.name}</option>`;
+      });
+    });
+
+    const ageStr=selName?(()=>{
+      const pl=squad.find(x=>x.name===selName);
+      const a=pl?calcAge(pl.dateOfBirth):null;
+      return a!==null?`(Alter: ${a})`:'';
+    })():'';
+
     div.innerHTML=`
       <div style="position:relative;display:inline-block">
-        <div class="player-circle" id="pc-${p.num}" onclick="uploadPlayerImg(${p.num})">
+        <div class="player-circle" id="pc-${clubId}-${idx}" onclick="openPEM('${clubId}',${idx})">
           <div class="player-ph">📷</div>
         </div>
-        <div class="player-num">${p.num}</div>
+        <div class="player-num" id="pnum-${clubId}-${idx}">${dispNum}</div>
       </div>
-      <div class="player-name-tag" contenteditable="true">${p.name}</div>
+      <select class="player-select" id="psel-${clubId}-${idx}" onchange="onPlayerSelect(this,'${clubId}',${idx})">${opts}</select>
+      <div class="player-age" id="page-${clubId}-${idx}">${ageStr}</div>
+      <div class="player-meta">
+        <input id="ph-${clubId}-${idx}" type="number" min="150" max="220" placeholder="cm" value="${dispH}" title="Größe" onchange="savePlayerMeta('${clubId}',${idx})">
+      </div>
       <div class="player-pos">${p.pos}</div>`;
     container.appendChild(div);
   });
 }
 
-function uploadPlayerImg(num){
-  const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
-  inp.onchange=e=>{
-    const f=e.target.files[0];if(!f)return;
-    const r=new FileReader();r.onload=ev=>{
-      const c=document.getElementById('pc-'+num);
-      c.innerHTML=`<img src="${ev.target.result}">`;
-    };r.readAsDataURL(f);
-  };inp.click();
+function onPlayerSelect(sel,clubId,idx){
+  const opt=sel.options[sel.selectedIndex];
+  const dob=opt?opt.getAttribute('data-dob'):'';
+  const age=calcAge(dob);
+  document.getElementById(`page-${clubId}-${idx}`).textContent=age!==null?`(Alter: ${age})`:'';
+  savePlayerMeta(clubId,idx);
 }
+
+function savePlayerMeta(clubId,idx){
+  const sel=document.getElementById(`psel-${clubId}-${idx}`);
+  const h=document.getElementById(`ph-${clubId}-${idx}`);
+  const numEl=document.getElementById(`pnum-${clubId}-${idx}`);
+  const saved=JSON.parse(localStorage.getItem(lsKey(clubId,idx))||'{}');
+  if(sel)saved.name=sel.value;
+  if(h)saved.height=h.value;
+  if(numEl)saved.num=numEl.textContent;
+  localStorage.setItem(lsKey(clubId,idx),JSON.stringify(saved));
+}
+
+// ── Player edit modal (Trikotnummer + Größe) ──────────────────────────────────
+let _pemClub='',_pemIdx=0;
+
+function openPEM(clubId,idx){
+  _pemClub=clubId;_pemIdx=idx;
+  const saved=JSON.parse(localStorage.getItem(lsKey(clubId,idx))||'{}');
+  document.getElementById('pemNum').value=saved.num||'';
+  document.getElementById('pemHeight').value=saved.height||'';
+  const sel=document.getElementById(`psel-${clubId}-${idx}`);
+  document.getElementById('pemTitle').textContent=sel&&sel.value?sel.value:'Spieler bearbeiten';
+  document.getElementById('pemOverlay').classList.add('open');
+}
+
+function closePEM(){document.getElementById('pemOverlay').classList.remove('open');}
+
+function savePEM(){
+  const num=document.getElementById('pemNum').value.trim();
+  const height=document.getElementById('pemHeight').value.trim();
+  const saved=JSON.parse(localStorage.getItem(lsKey(_pemClub,_pemIdx))||'{}');
+  if(num)saved.num=num;
+  if(height)saved.height=height;
+  localStorage.setItem(lsKey(_pemClub,_pemIdx),JSON.stringify(saved));
+  // update visible badge and height input
+  const numEl=document.getElementById(`pnum-${_pemClub}-${_pemIdx}`);
+  const hEl=document.getElementById(`ph-${_pemClub}-${_pemIdx}`);
+  if(numEl&&num)numEl.textContent=num;
+  if(hEl&&height)hEl.value=height;
+  closePEM();
+}
+
+// close modal on overlay click
+document.addEventListener('click',e=>{
+  if(e.target.id==='pemOverlay')closePEM();
+});
 
 function buildKeyPlayers(players,color){
   const col=document.getElementById('keyPlayersCol');
@@ -901,7 +1019,7 @@ function openClub(club){
   document.getElementById('trainerContract').textContent='Contract until: '+club.trainer.contract;
   buildMatchTable();
   buildLast5(club.form);
-  buildField(club.lineup,c);
+  buildField(club.lineup,c,club.id);
   buildKeyPlayers(club.keyPlayers,c);
   document.getElementById('dashboard').style.display='none';
   document.getElementById('twopager').style.display='block';
@@ -934,5 +1052,17 @@ function buildDashboard(){
 }
 buildDashboard();
 </script>
+
+<div id="pemOverlay">
+  <div class="pem-box">
+    <h4 id="pemTitle">Spieler bearbeiten</h4>
+    <div class="pem-row"><label>Trikotnummer</label><input id="pemNum" type="number" min="1" max="99" placeholder="z.B. 9"></div>
+    <div class="pem-row"><label>Größe (cm)</label><input id="pemHeight" type="number" min="150" max="220" placeholder="z.B. 183"></div>
+    <div class="pem-btns">
+      <button class="pem-cancel" onclick="closePEM()">Abbrechen</button>
+      <button class="pem-save" onclick="savePEM()">Speichern</button>
+    </div>
+  </div>
+</div>
 </body>
 </html>

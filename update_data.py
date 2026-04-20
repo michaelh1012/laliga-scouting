@@ -136,6 +136,7 @@ def get_squads():
                 "name":        p.get("name", ""),
                 "position":    p.get("position", ""),
                 "shirtNumber": p.get("shirtNumber"),
+                "dateOfBirth": p.get("dateOfBirth", ""),
             })
         players.sort(key=lambda p: (p["shirtNumber"] or 99))
         result[cid] = {
