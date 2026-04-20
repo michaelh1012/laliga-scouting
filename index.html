@@ -320,6 +320,7 @@ input[type=file]{display:none}
     <div class="p2-grid">
       <!-- FIELD -->
       <div>
+        <div id="squadError" style="display:none;background:#fee2e2;color:#991b1b;border:1px solid #fca5a5;border-radius:6px;padding:8px 12px;font-size:.72rem;font-weight:700;margin-bottom:8px"></div>
         <div class="field-label-row">
           <span class="field-label">Possible Line-up</span>
           <span class="formation-badge" id="formationBadge">4-3-3</span>
@@ -444,6 +445,8 @@ input[type=file]{display:none}
 </div>
 
 <script>
+// ── Startup diagnostics ───────────────────
+console.log("Gefundene Team-ID:", localStorage.getItem('selectedTeamId'));
 // ══════════════════════════════════════════
 // CLUB DATA – La Liga 2025/26 correct clubs
 // Crests via Wikipedia SVG / Wikimedia Commons
@@ -840,10 +843,25 @@ function buildField(lineup,color,clubId){
   const container=document.getElementById('playersOnField');
   container.innerHTML='';
   document.getElementById('formationBadge').textContent=lineup.formation;
-  const storedTeam=localStorage.getItem('selectedTeam');
-  const resolvedId=clubId||storedTeam||'';
+  const storedId=localStorage.getItem('selectedTeamId');
+  const resolvedId=clubId||storedId||'';
+  console.log('[buildField] clubId param:',clubId,'| localStorage selectedTeamId:',storedId,'| resolvedId:',resolvedId);
   const squad=(squadData[resolvedId]||{}).players||[];
-  console.log('[Page 2] Team erkannt:',resolvedId,'| Spieler im Kader:',squad.length,'| localStorage:',storedTeam);
+  console.log('[buildField] Spieler im Kader:',squad.length,'| squads.json Keys:',Object.keys(squadData));
+
+  // On-screen error if chain is broken
+  const errEl=document.getElementById('squadError');
+  if(errEl){
+    if(!resolvedId){
+      errEl.textContent='⚠ Kein Team im localStorage gefunden (selectedTeamId fehlt).';
+      errEl.style.display='block';
+    } else if(!squadData[resolvedId]){
+      errEl.textContent=`⚠ Team-ID "${resolvedId}" nicht in squads.json gefunden. Verfügbare IDs: ${Object.keys(squadData).join(', ')||'(squads.json leer – Ladefehler?)'}`;
+      errEl.style.display='block';
+    } else {
+      errEl.style.display='none';
+    }
+  }
   // group by position for optgroup ordering
   const posOrder=['Goalkeeper','Defence','Midfield','Offence'];
   const byPos={};
@@ -1010,8 +1028,8 @@ function loadImgInto(event,wrapId,phId){
 
 async function openClub(club){
   currentClub=club;
-  localStorage.setItem('selectedTeam',club.id);
-  console.log('[Page 1] Team ausgewählt und gespeichert:',club.id);
+  localStorage.setItem('selectedTeamId',club.id);
+  console.log('[openClub] selectedTeamId =',club.id);
   const c=club.color;
   document.querySelectorAll('.tp-page').forEach(p=>p.style.setProperty('--cc',c));
   ['clubTitle','clubTitle2','clubTitle3'].forEach(id=>document.getElementById(id).textContent=club.name.toUpperCase());
@@ -1055,7 +1073,11 @@ function buildDashboard(){
       <img class="club-crest" src="${c.crest}" alt="${c.name}" onerror="this.style.opacity='.3'">
       <div class="club-name">${c.name}</div>
       <div class="club-form-row">${c.form.map(f=>`<div class="cf ${f.r}" title="${f.s}">${f.r}</div>`).join('')}</div>`;
-    card.onclick=()=>openClub(c);
+    card.onclick=()=>{
+      localStorage.setItem('selectedTeamId',c.id);
+      console.log('[Card] selectedTeamId gesetzt:',c.id);
+      openClub(c);
+    };
     grid.appendChild(card);
   });
 }
