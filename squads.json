@@ -1,0 +1,3632 @@
+{
+  "athleticbilbao": {
+    "name": "Athletic Bilbao",
+    "players": [
+      {
+        "name": "Unai Simón",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álex Padilla",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mikel Santos",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai Eguíluz",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aimar Duñabeitia",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ander Izagirre",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon de Luis",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iker Monreal",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alejandro Rego",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ibon Sánchez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Selton Sánchez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Urko Izeta",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Endika Buján",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adrián Pérez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Asier Hierro",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Éder García",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Elijah Gift",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nico Serrano",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Benat Prados",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nico Williams",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aitor Paredes Casamichana",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jesús Areso",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Oihan Sancet",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Roberto Navarro",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mikel Vesga",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gorka Guruzeta",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Andoni Gorosabel",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iñaki Williams",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Daniel Vivian",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iñigo Lekue",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yeray Álvarez",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ruiz de Galarreta",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yuri Berchiche",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aymeric Laporte",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álex Berenguer",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sannadi",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adama Boiro",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mikel Jauregizar",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai Gomez",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "atletico": {
+    "name": "Atlético",
+    "players": [
+      {
+        "name": "Jan Oblak",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Musso",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mario de Luis",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Salvi Esquivel",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Moreno",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Pubill",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "José Giménez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aleksa Puric",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gerónimo Spina",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Daniel Martínez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Julio Díaz",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Obed Vargas",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javier Serrano",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Barrios",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rodrigo Mendoza",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alejandro Monserrate",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Taufik",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Morcillo",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ademola Lookman",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álex Baena",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iker Luque",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergio Sánchez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Giuliano Simeone",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Matteo Ruggeri",
+        "position": "Left Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Johnny",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Robin Le Normand",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Julián Álvarez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thiago Almada",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nahuel Molina",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nicolás González",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dávid Hancko",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alexander Sørloth",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antoine Griezmann",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Koke",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marcos Llorente",
+        "position": "Right Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Clément Lenglet",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rayane Belaid",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javier Boñar",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ilias Kostis",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "osasuna": {
+    "name": "Osasuna",
+    "players": [
+      {
+        "name": "Sergio Herrera",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aitor Fernández",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dimitrios Stamatakis",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Galán",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mikel Serrano",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Raúl Chasco",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon García",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mauro Echegoyen",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Roberto Arroyo",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Víctor Muñoz",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Lumbreras",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Martín Pedroarena",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aly Kall",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jorge Herrando",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Flavien Boyomo",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Raúl Moro",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Raúl",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aimar Oroz",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Moncayola",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Cruz",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Catena",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Moi Gómez",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rubén García",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kike Barja",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Torró",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Valentin Rosier",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ante Budimir",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Asier Osambela",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iñigo Arguibide",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iker Munoz",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abel Bretones",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iker Benito",
+        "position": "Right Winger",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "espanyol": {
+    "name": "Espanyol",
+    "players": [
+      {
+        "name": "Marko Dmitrović",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ángel Fortuño Viñas",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pol Tristán",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Llorenç Serred",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "José Salinas",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rubén Sánchez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Miguel Rubio",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "José López",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adama Timera",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Charles Pickel",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Omar El Hilali",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ferran Gómez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antoniu Roca",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Romero",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Roberto Fernández",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Clemens Riedel",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "RamónTerrats Espacio",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Urko González",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jofre Carreras Pagès",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tyrhys Dolan",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pol Lozano",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cyril Ngonge",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Puado",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Edu Expósito",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kike García",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pere Milla",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fernando Calero",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Leandro Cabrera",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "barcelona": {
+    "name": "Barcelona",
+    "players": [
+      {
+        "name": "Wojciech Szczęsny",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joan García",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Kochen",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Eder Aller",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Cortés",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jofre Torrents",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Guille Fernández",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Xavi Espart",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tomy Marqués",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Roony Bardagji",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Rodríguez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Toni Fernández",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Hernández",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álex Balde",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Gavira",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pedri",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Eric García",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Raphinha",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ferrán Torres",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ronald Araújo",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Olmo",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jules Koundé",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Frenkie de Jong",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Andreas Christensen",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marcus Rashford",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "João Cancelo",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Robert Lewandowski",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Bernal",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gerard Martín",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pau Cubarsí",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fermín López",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lamine Yamal",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Casado",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "getafe": {
+    "name": "Getafe",
+    "players": [
+      {
+        "name": "David Soria",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jiří Letáček",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jorge Benito",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Ferrer",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Laso",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Zaid Romero",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kiko Femenía",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sebastián Boselli",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Davinchi",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ismael Bekhoucha",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Vilaplana",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jorge Montes",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tito",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Veljko Birmančević",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alejandro Sancris",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adri Liso",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mykyta Alexandrov",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adrián Riquelme",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luis Vázquez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mestanza",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mario Martin",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gorka Rivera",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abu Kamara",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Martin Satriano",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Iglesias",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abdelkabir Abqar",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Domingos Duarte",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mauro Arambarri",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luis Milla",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Muñoz",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Allan Nyom",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dakonam Djené",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Rico",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Borja Mayoral",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juanmi",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yassin Tallal",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alberto Risco",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joselu Pérez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Solozábal",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "realmadrid": {
+    "name": "Real Madrid",
+    "players": [
+      {
+        "name": "Thibaut Courtois",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Andriy Lunin",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergio Mestre",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fran Gonzalez",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Navarro",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Carreras",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fran García",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Jiménez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Aguado",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Víctor Valdepeñas",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jesús Fortea",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joan Martínez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lamini Fati",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Franco Mastantuono",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thiago Pitarch",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jorge Cestero",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "César Palacios",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Meso",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Manuel Angel",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Leiva",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Daniel Yáñez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pol Fortuny",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dean Huijsen",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Arda Guler",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jude Bellingham",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Eduardo Camavinga",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aurélien Tchouameni",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ferland Mendy",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Brahim Diaz",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Trent Alexander-Arnold",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kylian Mbappé",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Carvajal",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antonio Rüdiger",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Vinicius Junior",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Éder Militão",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rodrygo",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Alaba",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Federico Valverde",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Ceballos",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Raúl",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gonzalo García",
+        "position": "Right Winger",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "rayo": {
+    "name": "Rayo Vallecano",
+    "players": [
+      {
+        "name": "Augusto Batalla",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Cárdenas",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gil Juanpe",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adrián Molina",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jozhua Vertrouwd",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marco de las Sías",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergio Lozano",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Samu Becerra",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marco Román",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alexandre Alemão",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Randy Ntekja",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pathé Ciss",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gerard Gumbau",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Isi Palazón",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro García",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pedro Díaz",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai López",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Óscar Trejo",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Óscar Valentín",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alfonso Espino",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abdul Mumin",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iván Balliu",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Florian Lejeune",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luiz Felipe",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nobel Mendy",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fran Perez",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ilias Akhomach",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Martin",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pep Chavarría",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jorge de Frutos",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergio Camello",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Andrei Rațiu",
+        "position": "Right-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "levante": {
+    "name": "Levante",
+    "players": [
+      {
+        "name": "Maty Ryan",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Cuñat",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alejandro Primo",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cayetano Romero",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai Elgezabal",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Pampín",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adrián de la Fuente",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Martín Krug",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nacho Pérez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Huseini",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Oriol Rey",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Martínez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai Vencedor Paris",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Álvarez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kervin Arriaga",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tai Abed",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Cervera",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Paco Cortés",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Rosón",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joan Ruiz",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iker Losada",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iván Romero",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Brugui",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Karl Etta Eyong",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Víctor García",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "José Morales",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Espí",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kareem Tunde",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ugo Raghouber",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Olasagasti",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Manuel Sánchez",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jeremy Toljan",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Matias Moreno",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alan Matturro",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "mallorca": {
+    "name": "Mallorca",
+    "players": [
+      {
+        "name": "Cuéllar",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Leo Román",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Bergström",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nil Torreguitart",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rares Vlad",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Orejuela",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Leo Sánchez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antonio Sánchez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iliesse Salhi",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javier Olaizola",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jandro García",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Zito Luvumbo",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jan Virgili",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Torre",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Samuel Almeida Costa",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mateu Morey",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abdón Prats",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Maffeo",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Toni Lato",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Manu Morlanes",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antonio Raíllo",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergi Darder",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Vedat Muriqi",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Takuma Asano",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Omar Mascarell",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Johan Mojica",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Martin Valjent",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marash Kumbulla",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "David López",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Justin-Noel Kalumba",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mateo Fernandez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javier Llabres",
+        "position": "Left Winger",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "betis": {
+    "name": "Real Betis",
+    "players": [
+      {
+        "name": "Adrián",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pau López",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Vallés Rosa",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Germán García",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Manu González",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Valentín Gómez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ángel Ortiz",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos De Roa",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iván Corralejo",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abdessamad Ezzalzouli",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ezequiel Ávila",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo García",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Morante",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rodrigo Marina",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Fidalgo",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antony",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Fornals",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aitor Ruibal",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Bartra",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Júnior Firpo",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Roca",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cucho Hernández",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cédric Bakambu",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Héctor Bellerín",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sofyan Amrabat",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Giovani Lo Celso",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ricardo Rodriguez",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Isco",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Llorente",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Darling Bladi",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergi Altimira",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Perez",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nelson Deossa",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Natan",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rodrigo Riquelme",
+        "position": "Left Winger",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "realsociedad": {
+    "name": "Real Sociedad",
+    "players": [
+      {
+        "name": "Álex Remiro",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai Marrero",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aitor Fraga",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Théo Folgado",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kazunari Kita",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luken Beitia",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Balda",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Wesley Gassova",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Gorrotxategi",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alex Lebarbier",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tomy Carbonell",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lander",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ibai Aguirre",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Orri Oskarsson",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Arkaitz Mariezkurrena",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alex Marchal",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Díaz",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ochieng",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gorka Carrera",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Marin",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Karrikaburu",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Arsen Zakharyan",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Beñat Turrientes",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Aramburu",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ander Barrenetxea",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aihen Muñoz",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luka Sučić",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yangel Herrera",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Takefusa Kubo",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Brais Méndez",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Soler",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Duje Ćaleta-Car",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gonçalo Guedes",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergio Gómez",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Igor Zubeldía",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aritz Elustondo",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Odriozola",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Martín",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mikel Oyarzabal",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alberto Dadie",
+        "position": "Right Winger",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "villarreal": {
+    "name": "Villarreal",
+    "players": [
+      {
+        "name": "Arnau Tenas",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Conde",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luiz Junior",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ruben Gomez",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alex Freeman",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sierra Arnal",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Budesca",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Valou",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Santi Comesaña",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alassane Diatta",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo López",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Macià",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tani Oluwaseyi",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mahamoud Barry",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joselillo",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rafa Marin",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alberto Moleiro",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Georges Mikautadze",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tajon Buchanan",
+        "position": "Right Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gerard Moreno",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alfonso González",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nicolas Pépé",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Foyth",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ayoze Pérez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Parejo",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Logan Costa",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pape Gueye",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alfonso Pedraza",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thomas Partey",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pau Cabanes",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Willy Kambwala",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pau Navarro",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Santiago Mouriño",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergi Cardona",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Renato Veiga",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "valencia": {
+    "name": "Valencia",
+    "players": [
+      {
+        "name": "Cristian",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Stole Dimitrievski",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Julen Agirrezabala",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pere Garcia",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Vicent Abril",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Renzo Saravia",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marcos Navarro",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Panach",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joel Fontanet",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aaron Mayol",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Filip Ugrinic",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javier Navarro",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Núñez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Jurado",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aimar Blázquez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Largie Ramazani",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thierry Correia",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Beltrán",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luis Rioja",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Guido Rodríguez",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "André Almeida",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pepelu",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gaya",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Raba",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Duro",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Unai Núñez",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Eray Cömert",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Arnaut Danjuma",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dimitri Foulquier",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Baptiste Santamaria",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mouctar Diakhaby",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Umar Sadiq",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Otorbi",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mario Dominguez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego López",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javier Guerra",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ruben Iranzo",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cesar Tarrega",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Copete",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jesus Vazquez Alcalde",
+        "position": "Left-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "alavesdeportivo": {
+    "name": "Alavés",
+    "players": [
+      {
+        "name": "Sivera",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Raúl Fernández",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gregoire Swiderski",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rubén Montero",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Paco Sanz",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ángel Pérez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Ballestero",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yusi",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Xanet Oláiz",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Calebe",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ville Koski",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carles Aleñá",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Izei Hernández",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Boyé",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ibrahim Diabaté",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aitor Mañas",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lander Pinillos",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Morcillo",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antonio Blanco",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Pacheco",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Victor Parada",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nahuel Tenaglia",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Facundo Garcés",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jonny Otto",
+        "position": "null",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ander Guevara",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jon Guridi",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Benavidez",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Denís Suárez",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Toni Martínez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mariano Díaz",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro García",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Egoitz Muñoz",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abde Rebbach",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Ibáñez Tébar",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "elche": {
+    "name": "Elche",
+    "players": [
+      {
+        "name": "Matías Dituro",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alejandro Iturbe",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iñaki Peña",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pedro Bigas",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Affengruber",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Víctor Chust",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "John Chetauya",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adrià Pedrosa",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Buba",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Bema Sina",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Albert Niculaesei",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Delgado",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nico Salvador",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Felipe",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aleix Febas",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Josán Fernández",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gonzalo Villar",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Aguado",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Federico Redondo",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Cepeda",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Antonio Martínez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álex Herráiz",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adam",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álex Sánchez",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Martim Neto",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Germán Valera",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Léo Pétrot",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Tete Morente",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Grady Diangana",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rafael Mir",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "André Silva",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Héctor Fort",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Piri",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yago Santiago",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alvaro Rodriguez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "girona": {
+    "name": "Girona",
+    "players": [
+      {
+        "name": "Marc-André ter Stegen",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Paulo Gazzaniga",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Carlos",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rubén Blanco",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Vladyslav Krapyvtsov",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Aleksandar Andreev",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Casals",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pol Arnau",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gibert Jordana",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Salguero",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lass Kourouma",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Papa Ba",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Vladyslav Vanat",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Sarasa",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iván Martín",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Bryan Gil",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Portu",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "David López",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Abel Ruiz",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alex Moreno",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fran Beltrán",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Viktor Tsyhankov",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Daley Blind",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Donny van de Beek",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Axel Witsel",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thomas Lemar",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cristhian Stuani",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Vitor Reis",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juan Arango",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Rincón",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Claudio Echeverri",
+        "position": "Attacking Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Arnau Martinez",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alejandro Francés",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Azzedine Ounahi",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "celtavigo": {
+    "name": "Celta Vigo",
+    "players": [
+      {
+        "name": "Ionuț Radu",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iván Villar",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marc Vidal",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marcos Maestu",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Álvaro Núñez",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Manuel Fernández",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo González",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ferran Jutglà",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jones El-Abdellaoui",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fer López",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Miguel Román",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Andrés Antañón",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Óscar Marcos",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Burcio",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ángel Arcos",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Gonzalez",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Alvarez",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Williot Swedberg",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Hugo Sotelo",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carlos Dominguez",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ilaix Moriba",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Óscar Mingueza",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Sergio Carreira",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Mihajlo Ristić",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Borja Iglesias",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Carl Starfelt",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Franco Cervi",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joseph Aidoo",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iago Aspas",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marcos Alonso",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Matías Vecino",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Rueda",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Yoel Lago",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi Rodríguez",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Duran",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "sevilla": {
+    "name": "Sevilla",
+    "players": [
+      {
+        "name": "Ørjan Nyland",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Odisseas Vlachodimos",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rafa Romero",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alberto Flores",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Loren Luchino",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Castrin",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Iker Ortín",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Joan Jordán",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Manuel Bueno",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Miguel Ángel Sierra",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Rivera",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Eduardo Altozano",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Peque",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Costa",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Batista Mendy",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nianzou Kouassi",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucien Agoume",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Akor Adams",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Federico Gattoni",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marcão",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Chidera Ejuke",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Fábio Cardoso",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ruben Vargas",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nemanja Gudelj",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Gabriel Suazo",
+        "position": "Left-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Djibril Sow",
+        "position": "Central Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adnan Januzaj",
+        "position": "Right Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alexis Sánchez",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Neal Maupay",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Azpilicueta",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Oso",
+        "position": "Left Winger",
+        "shirtNumber": null
+      },
+      {
+        "name": "Isaac",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Juanlu",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kike Salas",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Jose Angel Carmona",
+        "position": "Right-Back",
+        "shirtNumber": null
+      }
+    ]
+  },
+  "oviedo": {
+    "name": "Real Oviedo",
+    "players": [
+      {
+        "name": "Aarón",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Horaţiu Moldovan",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "Miguel Narváez",
+        "position": "Goalkeeper",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Costas",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Dani Calvo",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lucas Ahijado",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "David Carmo",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Javi López",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Marco Esteban",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Rahim Alhassane",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Espinosa",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Omar Falah",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Adri Fernández",
+        "position": "Defence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Santiago Colombatto",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ovie Ejaria",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Santi Cazorla",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Luka Ilić",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Kwasi Sibo",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Haissem Hassan",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alberto Reina",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thiago Fernandez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Menéndez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Diego Tejón",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Lamine Gueye",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Cheli",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Pablo Menéndez",
+        "position": "Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Federico Viñas",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Thiago Borbas",
+        "position": "Offence",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nicolas Fonseca",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Nacho Vidal",
+        "position": "Right-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Eric Bailly",
+        "position": "Centre-Back",
+        "shirtNumber": null
+      },
+      {
+        "name": "Leander Dendoncker",
+        "position": "Defensive Midfield",
+        "shirtNumber": null
+      },
+      {
+        "name": "Alex Forés",
+        "position": "Centre-Forward",
+        "shirtNumber": null
+      },
+      {
+        "name": "Ilyas Chaira",
+        "position": "Right Winger",
+        "shirtNumber": null
+      }
+    ]
+  }
+}

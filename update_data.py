@@ -10,6 +10,7 @@ Usage:
 Requires FOOTBALL_DATA_API_KEY in .env  (see .env.example).
 """
 
+import json
 import os
 import re
 import shutil
@@ -28,6 +29,7 @@ COMPETITION = "PD"        # La Liga
 SEASON      = 2025
 INDEX_FILE  = "index.html"
 BACKUP_FILE = "index.html.bak"
+SQUADS_FILE = "squads.json"
 
 # ── API team name → our JS club id ──────────────────────────────────────────
 CLUB_MAP = {
@@ -118,6 +120,29 @@ def get_finished_matches():
         reverse=True,
     )
     return matches
+
+
+def get_squads():
+    """Return {club_id: {"name": ..., "players": [{name, position, shirtNumber}, ...]}}."""
+    data = fetch(f"/competitions/{COMPETITION}/teams", {"season": SEASON})
+    result = {}
+    for team in data.get("teams", []):
+        cid = resolve(team["name"])
+        if not cid:
+            continue
+        players = []
+        for p in team.get("squad", []):
+            players.append({
+                "name":        p.get("name", ""),
+                "position":    p.get("position", ""),
+                "shirtNumber": p.get("shirtNumber"),
+            })
+        players.sort(key=lambda p: (p["shirtNumber"] or 99))
+        result[cid] = {
+            "name":    DISPLAY.get(cid, team["name"]),
+            "players": players,
+        }
+    return result
 
 
 def get_standings():
@@ -264,7 +289,14 @@ def main():
 
     print("Fetching standings …")
     table = get_standings()
-    print(f"  {len(table)} clubs in table.\n")
+    print(f"  {len(table)} clubs in table.")
+
+    print("Fetching squads …")
+    squads = get_squads()
+    with open(SQUADS_FILE, "w", encoding="utf-8") as f:
+        json.dump(squads, f, ensure_ascii=False, indent=2)
+    total_players = sum(len(v["players"]) for v in squads.values())
+    print(f"  {len(squads)} squads / {total_players} players saved → {SQUADS_FILE}\n")
 
     # ── Standings dict ───────────────────────────────────────────────────
     standings = {}
