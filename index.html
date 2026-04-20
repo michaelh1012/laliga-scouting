@@ -824,6 +824,7 @@ function showDashboard(){
 // Build dashboard grid
 function buildDashboard(){
   const grid=document.getElementById('clubsGrid');
+  clubs.sort((a,b)=>a.name.localeCompare(b.name));
   clubs.forEach(c=>{
     const pos=c.pos;
     const zone=pos<=4?'zone-ucl':pos<=6?'zone-uel':pos<=16?'zone-mid':'zone-rel';
