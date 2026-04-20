@@ -820,7 +820,7 @@ function buildLast5(form){
 
 // ── Squad data ───────────────────────────────────────────────────────────────
 let squadData={};
-fetch('squads.json').then(r=>r.json()).then(d=>{squadData=d;}).catch(()=>{});
+const squadReady=fetch('squads.json').then(r=>r.json()).then(d=>{squadData=d;}).catch(()=>{});
 
 function calcAge(dob){
   if(!dob)return null;
@@ -1002,7 +1002,7 @@ function loadImgInto(event,wrapId,phId){
   reader.readAsDataURL(file);
 }
 
-function openClub(club){
+async function openClub(club){
   currentClub=club;
   const c=club.color;
   document.querySelectorAll('.tp-page').forEach(p=>p.style.setProperty('--cc',c));
@@ -1019,6 +1019,7 @@ function openClub(club){
   document.getElementById('trainerContract').textContent='Contract until: '+club.trainer.contract;
   buildMatchTable();
   buildLast5(club.form);
+  await squadReady;
   buildField(club.lineup,c,club.id);
   buildKeyPlayers(club.keyPlayers,c);
   document.getElementById('dashboard').style.display='none';
