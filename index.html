@@ -146,6 +146,33 @@ input[type=file]{display:none}
 .kp-desc li:last-child{border-bottom:none}
 .kp-desc li::before{content:"• ";color:var(--cc,#1a3a6b);font-weight:700}
 
+/* ── PAGE 3 ── */
+.pg3-phase{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:1px;text-align:center;min-height:44px;display:flex;align-items:center;justify-content:center;line-height:1.2;margin-bottom:8px}
+.pg3-phase.offense{color:#c8102e}
+.pg3-phase.trans-def{color:#c8102e}
+.pg3-phase.defense{color:#003087}
+.pg3-phase.trans-off{color:#c8102e}
+.pg3-phase.adaptations{color:#e8c840}
+.pg3-timeline{position:relative;height:28px;display:flex;align-items:center;margin-bottom:14px}
+.pg3-line{position:absolute;left:0;right:0;height:3px;background:linear-gradient(to right,#c8102e,#003087)}
+.pg3-dot{position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;border-radius:50%;border:3px solid #fff;z-index:2}
+.pg3-dot.d1{background:#c8102e;left:10%}
+.pg3-dot.d2{left:35%;background:repeating-conic-gradient(#c8102e 0% 25%,#003087 0% 50%) 0 0/8px 8px}
+.pg3-dot.d3{background:#003087;left:60%}
+.pg3-dot.d4{left:85%;background:repeating-conic-gradient(#c8102e 0% 25%,#003087 0% 50%) 0 0/8px 8px}
+.pg3-cols{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start}
+.pg3-col{display:flex;flex-direction:column;gap:0}
+.pg3-box{border:1.5px dashed #aaa;border-radius:6px;padding:14px 12px;min-height:340px;background:#fff}
+.pg3-box ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.pg3-box li{display:flex;align-items:flex-start;gap:7px;font-size:.82rem;font-weight:700;line-height:1.4}
+.pg3-box li .bullet{flex-shrink:0;margin-top:2px}
+.pg3-box li .txt{flex:1;min-height:18px}
+.pg3-col:nth-child(1) .pg3-box li .bullet,.pg3-col:nth-child(1) .pg3-box li .txt{color:#c8102e}
+.pg3-col:nth-child(2) .pg3-box li .bullet,.pg3-col:nth-child(2) .pg3-box li .txt{color:#333}
+.pg3-col:nth-child(3) .pg3-box li .bullet,.pg3-col:nth-child(3) .pg3-box li .txt{color:#333}
+.pg3-col:nth-child(4) .pg3-box li .bullet,.pg3-col:nth-child(4) .pg3-box li .txt{color:#333}
+.pg3-col:nth-child(5) .pg3-box li .bullet,.pg3-col:nth-child(5) .pg3-box li .txt{color:#e8c840}
+
 @media print{
   body{background:#fff}
   #dashboard{display:none !important}
@@ -183,6 +210,7 @@ input[type=file]{display:none}
     <div class="tp-page-tabs">
       <button class="tab-btn active" onclick="showPage(1)">Page 1 – Analysis</button>
       <button class="tab-btn" onclick="showPage(2)">Page 2 – Line-up</button>
+      <button class="tab-btn" onclick="showPage(3)">Page 3 – Feedback</button>
     </div>
     <button class="btn-export" onclick="window.print()">⬇ Export PDF</button>
   </div>
@@ -330,6 +358,71 @@ input[type=file]{display:none}
       <div class="kp-col" id="keyPlayersCol"></div>
     </div>
   </div>
+
+  <!-- PAGE 3 -->
+  <div class="tp-page" id="pg3">
+  <div class="tp-header">
+    <img class="tp-crest" id="hdrCrest3" src="" alt="">
+    <div class="tp-header-main">
+      <h1 id="clubTitle3">CLUB NAME</h1>
+      <div class="hdr-meta">Challenges During the Game</div>
+    </div>
+  </div>
+  <div class="pg3-timeline" style="margin-bottom:20px">
+    <div class="pg3-line"></div>
+    <div class="pg3-dot d1"></div>
+    <div class="pg3-dot d2"></div>
+    <div class="pg3-dot d3"></div>
+    <div class="pg3-dot d4"></div>
+  </div>
+  <div class="pg3-cols">
+    <div class="pg3-col">
+      <div class="pg3-phase offense">In Offense</div>
+      <div class="pg3-box"><ul>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+      </ul></div>
+    </div>
+    <div class="pg3-col">
+      <div class="pg3-phase trans-def">In Transition<br>Def</div>
+      <div class="pg3-box"><ul>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+      </ul></div>
+    </div>
+    <div class="pg3-col">
+      <div class="pg3-phase defense">In Defense</div>
+      <div class="pg3-box"><ul>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+      </ul></div>
+    </div>
+    <div class="pg3-col">
+      <div class="pg3-phase trans-off">In Transition<br>Off</div>
+      <div class="pg3-box"><ul>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+      </ul></div>
+    </div>
+    <div class="pg3-col">
+      <div class="pg3-phase adaptations">Adaptations</div>
+      <div class="pg3-box"><ul>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+        <li><span class="bullet">•</span><span class="txt" contenteditable="true">Add feedback point</span></li>
+      </ul></div>
+    </div>
+  </div>
+</div>
 </div>
 
 <script>
@@ -795,8 +888,8 @@ function openClub(club){
   currentClub=club;
   const c=club.color;
   document.querySelectorAll('.tp-page').forEach(p=>p.style.setProperty('--cc',c));
-  ['clubTitle','clubTitle2'].forEach(id=>document.getElementById(id).textContent=club.name.toUpperCase());
-  ['hdrCrest','hdrCrest2'].forEach(id=>{
+  ['clubTitle','clubTitle2','clubTitle3'].forEach(id=>document.getElementById(id).textContent=club.name.toUpperCase());
+  ['hdrCrest','hdrCrest2','hdrCrest3'].forEach(id=>{
     const el=document.getElementById(id);
     el.src=club.crest;
     el.onerror=()=>el.style.display='none';
