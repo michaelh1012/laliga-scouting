@@ -60,6 +60,7 @@ CLUB_MAP = {
     "Getafe":                      "getafe",
     "Valencia CF":                 "valencia",
     "Valencia":                    "valencia",
+    "RCD Espanyol de Barcelona":   "espanyol",
     "RCD Espanyol":                "espanyol",
     "Espanyol":                    "espanyol",
     "Deportivo Alavés":            "alavesdeportivo",
