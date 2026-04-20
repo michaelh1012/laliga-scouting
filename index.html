@@ -844,10 +844,27 @@ function buildField(lineup,color,clubId){
   container.innerHTML='';
   document.getElementById('formationBadge').textContent=lineup.formation;
   const storedId=localStorage.getItem('selectedTeamId');
-  const resolvedId=clubId||storedId||'';
+  const resolvedId=(clubId||storedId||'').trim().toLowerCase();
   console.log('[buildField] clubId param:',clubId,'| localStorage selectedTeamId:',storedId,'| resolvedId:',resolvedId);
-  const squad=(squadData[resolvedId]||{}).players||[];
-  console.log('[buildField] Spieler im Kader:',squad.length,'| squads.json Keys:',Object.keys(squadData));
+  console.log('[buildField] squads.json Keys:',Object.keys(squadData));
+
+  // 1) exact match (case-insensitive, trimmed)
+  const allKeys=Object.keys(squadData);
+  let matchedKey=allKeys.find(k=>k.trim().toLowerCase()===resolvedId);
+
+  // 2) fallback: partial substring match
+  if(!matchedKey&&resolvedId){
+    matchedKey=allKeys.find(k=>k.toLowerCase().includes(resolvedId)||resolvedId.includes(k.toLowerCase()));
+  }
+
+  if(matchedKey){
+    console.log('Match gefunden! Nutze Key:',matchedKey);
+  } else {
+    console.warn('[buildField] Kein Match für resolvedId:',resolvedId);
+  }
+
+  const squad=(matchedKey?squadData[matchedKey]:{}).players||[];
+  console.log('[buildField] Spieler im Kader:',squad.length);
 
   // On-screen error if chain is broken
   const errEl=document.getElementById('squadError');
@@ -855,8 +872,8 @@ function buildField(lineup,color,clubId){
     if(!resolvedId){
       errEl.textContent='⚠ Kein Team im localStorage gefunden (selectedTeamId fehlt).';
       errEl.style.display='block';
-    } else if(!squadData[resolvedId]){
-      errEl.textContent=`⚠ Team-ID "${resolvedId}" nicht in squads.json gefunden. Verfügbare IDs: ${Object.keys(squadData).join(', ')||'(squads.json leer – Ladefehler?)'}`;
+    } else if(!matchedKey){
+      errEl.textContent=`⚠ Kein Match für "${resolvedId}" in squads.json. Verfügbare Keys: ${allKeys.join(', ')||'(squads.json leer – fetch fehlgeschlagen?)'}`;
       errEl.style.display='block';
     } else {
       errEl.style.display='none';
@@ -868,7 +885,8 @@ function buildField(lineup,color,clubId){
   squad.forEach(p=>{const k=p.position||'Other';(byPos[k]=byPos[k]||[]).push(p);});
 
   lineup.players.forEach((p,idx)=>{
-    const saved=JSON.parse(localStorage.getItem(lsKey(resolvedId,idx))||'{}');
+    const slotKey=matchedKey||resolvedId;
+    const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
     const dispNum=saved.num!==undefined?saved.num:p.num;
     const dispH=saved.height||'';
     const selName=saved.name||'';
@@ -907,15 +925,15 @@ function buildField(lineup,color,clubId){
 
     div.innerHTML=`
       <div style="position:relative;display:inline-block">
-        <div class="player-circle" id="pc-${resolvedId}-${idx}" onclick="openPEM('${resolvedId}',${idx})">
+        <div class="player-circle" id="pc-${slotKey}-${idx}" onclick="openPEM('${slotKey}',${idx})">
           <div class="player-ph">📷</div>
         </div>
-        <div class="player-num" id="pnum-${resolvedId}-${idx}">${dispNum}</div>
+        <div class="player-num" id="pnum-${slotKey}-${idx}">${dispNum}</div>
       </div>
-      <select class="player-select" id="psel-${resolvedId}-${idx}" onchange="onPlayerSelect(this,'${resolvedId}',${idx})">${opts}</select>
-      <div class="player-age" id="page-${resolvedId}-${idx}">${ageStr}</div>
+      <select class="player-select" id="psel-${slotKey}-${idx}" onchange="onPlayerSelect(this,'${slotKey}',${idx})">${opts}</select>
+      <div class="player-age" id="page-${slotKey}-${idx}">${ageStr}</div>
       <div class="player-meta">
-        <input id="ph-${resolvedId}-${idx}" type="number" min="150" max="220" placeholder="cm" value="${dispH}" title="Größe" onchange="savePlayerMeta('${resolvedId}',${idx})">
+        <input id="ph-${slotKey}-${idx}" type="number" min="150" max="220" placeholder="cm" value="${dispH}" title="Größe" onchange="savePlayerMeta('${slotKey}',${idx})">
       </div>
       <div class="player-pos">${p.pos}</div>`;
     container.appendChild(div);
