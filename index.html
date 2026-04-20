@@ -128,10 +128,10 @@ input[type=file]{display:none}
 .player-pos{font-size:.5rem;color:rgba(255,255,255,.75)}
 .player-select{font-size:.5rem;width:72px;border:none;border-radius:3px;background:rgba(0,0,0,.78);color:#fff;padding:2px 3px;cursor:pointer;outline:none;text-align:center}
 .player-select option{background:#222;color:#fff}
-.player-age{font-size:.48rem;color:rgba(255,255,255,.82);margin-top:1px;text-align:center;min-height:8px;white-space:nowrap}
-.player-meta{display:flex;gap:3px;justify-content:center;margin-top:2px}
-.player-meta input{width:30px;font-size:.48rem;border:none;border-radius:2px;background:rgba(0,0,0,.6);color:#fff;text-align:center;padding:1px 3px;outline:none}
-.player-meta input::placeholder{color:rgba(255,255,255,.45)}
+.player-age{font-size:.48rem;color:rgba(255,255,255,.82);margin-top:1px;text-align:center;min-height:9px;white-space:nowrap}
+.player-height{display:block;width:52px;margin:3px auto 0;font-size:.5rem;border:none;border-radius:3px;background:rgba(0,0,0,.55);color:#fff;text-align:center;padding:2px 4px;outline:none;cursor:text}
+.player-height:focus{background:rgba(0,0,0,.85);box-shadow:0 0 0 1.5px rgba(255,255,255,.5)}
+.player-height::placeholder{color:rgba(255,255,255,.4)}
 #pemOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center}
 #pemOverlay.open{display:flex}
 .pem-box{background:#fff;border-radius:10px;padding:22px 24px;min-width:230px;box-shadow:0 6px 28px rgba(0,0,0,.35)}
@@ -877,7 +877,7 @@ function buildField(lineup,color,teamId){
     const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
     const dispNum=saved.num!==undefined?saved.num:p.num;
     const selName=saved.name||'';
-    const dispH=saved.height||'';
+    const dispH=saved.height||getGlobalHeight(selName)||'';
 
     let opts=`<option value="">— Name —</option>`;
     posOrder.forEach(pos=>{
@@ -907,18 +907,36 @@ function buildField(lineup,color,teamId){
       </div>
       <select class="player-select" id="psel-${slotKey}-${idx}" onchange="onPlayerSelect(this,'${slotKey}',${idx})">${opts}</select>
       <div class="player-age" id="page-${slotKey}-${idx}">${ageStr}</div>
-      <div class="player-meta">
-        <input id="ph-${slotKey}-${idx}" type="number" min="150" max="220" placeholder="cm" value="${dispH}" title="Größe" onchange="savePlayerMeta('${slotKey}',${idx})">
-      </div>
+      <input class="player-height" id="ph-${slotKey}-${idx}" type="number" min="150" max="220" placeholder="cm" value="${dispH}" title="Größe (cm)" onchange="onHeightChange(this,'${slotKey}',${idx})">
       <div class="player-pos">${p.pos}</div>`;
     container.appendChild(div);
   });
 }
 
+// ── Global height by player name ─────────────────────────────────────────────
+function heightKey(name){return `playerHeight:${name}`;}
+
+function getGlobalHeight(name){return name?localStorage.getItem(heightKey(name))||'':'';}
+
+function setGlobalHeight(name,cm){if(name&&cm)localStorage.setItem(heightKey(name),cm);}
+
 function onPlayerSelect(sel,slotKey,idx){
   const opt=sel.options[sel.selectedIndex];
+  const name=sel.value;
+  // age
   const age=calcAge(opt?opt.getAttribute('data-dob'):'');
   document.getElementById(`page-${slotKey}-${idx}`).textContent=age!==null?`(Alter: ${age})`:'';
+  // auto-fill height from global store
+  const hEl=document.getElementById(`ph-${slotKey}-${idx}`);
+  if(hEl){const stored=getGlobalHeight(name);if(stored)hEl.value=stored;}
+  savePlayerMeta(slotKey,idx);
+}
+
+function onHeightChange(input,slotKey,idx){
+  const cm=input.value.trim();
+  // save globally by name
+  const sel=document.getElementById(`psel-${slotKey}-${idx}`);
+  if(sel&&sel.value)setGlobalHeight(sel.value,cm);
   savePlayerMeta(slotKey,idx);
 }
 
@@ -928,7 +946,7 @@ function savePlayerMeta(slotKey,idx){
   const h=document.getElementById(`ph-${slotKey}-${idx}`);
   const numEl=document.getElementById(`pnum-${slotKey}-${idx}`);
   if(sel)saved.name=sel.value;
-  if(h)saved.height=h.value;
+  if(h){saved.height=h.value;if(sel&&sel.value)setGlobalHeight(sel.value,h.value);}
   if(numEl)saved.num=numEl.textContent;
   localStorage.setItem(lsKey(slotKey,idx),JSON.stringify(saved));
 }
@@ -953,7 +971,11 @@ function savePEM(){
   const height=document.getElementById('pemHeight').value.trim();
   const saved=JSON.parse(localStorage.getItem(lsKey(_pemSlot,_pemIdx))||'{}');
   if(num)saved.num=num;
-  if(height)saved.height=height;
+  if(height){
+    saved.height=height;
+    const sel=document.getElementById(`psel-${_pemSlot}-${_pemIdx}`);
+    if(sel&&sel.value)setGlobalHeight(sel.value,height);
+  }
   localStorage.setItem(lsKey(_pemSlot,_pemIdx),JSON.stringify(saved));
   const numEl=document.getElementById(`pnum-${_pemSlot}-${_pemIdx}`);
   const hEl=document.getElementById(`ph-${_pemSlot}-${_pemIdx}`);
