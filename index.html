@@ -119,21 +119,32 @@ input[type=file]{display:none}
 .field-container{position:relative;width:100%;padding-top:64.76%;background:#2d8a4e;border-radius:6px;overflow:hidden;border:3px solid #1a5e34}
 .field-markings{position:absolute;inset:0;pointer-events:none}
 .field-markings svg{width:100%;height:100%}
-.player-on-field{position:absolute;transform:translate(-50%,-50%);text-align:center;width:72px;z-index:10}
-.player-rect{width:44px;height:59px;border-radius:4px;overflow:hidden;border:2px solid rgba(255,255,255,.85);margin:0 auto 3px;background:#bbb;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative}
+.player-on-field{position:absolute;transform:translate(-50%,-50%);text-align:center;width:80px;z-index:10}
+/* 3:4 rectangle */
+.player-rect-wrap{position:relative;width:48px;margin:0 auto 4px}
+.player-rect{width:48px;height:64px;border-radius:4px;overflow:hidden;border:2px solid rgba(255,255,255,.85);background:#bbb;display:flex;align-items:center;justify-content:center;cursor:pointer}
 .player-rect img{width:100%;height:100%;object-fit:cover}
 .player-ph{font-size:.42rem;color:#999;text-align:center;line-height:1.4}
-.player-num{position:absolute;top:2px;right:2px;background:#dc2626;color:#fff;border-radius:2px;min-width:14px;height:14px;font-size:.52rem;font-weight:900;display:flex;align-items:center;justify-content:center;padding:0 2px;z-index:2;line-height:1}
-.player-name-row{display:flex;align-items:center;justify-content:center;gap:2px;width:72px}
-.foot-badge{font-size:.44rem;font-weight:900;width:12px;height:12px;border-radius:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.28);color:rgba(255,255,255,.35);flex-shrink:0;transition:background .15s,color .15s}
+/* Jersey number: editable input styled as red badge */
+.player-num{position:absolute;top:2px;right:2px;background:#dc2626;border-radius:3px;z-index:4;padding:0 2px;height:16px;min-width:16px;display:flex;align-items:center}
+.player-num input{background:transparent;border:none;color:#fff;font-size:.54rem;font-weight:900;width:18px;text-align:center;outline:none;padding:0;cursor:pointer;-moz-appearance:textfield}
+.player-num input::-webkit-outer-spin-button,.player-num input::-webkit-inner-spin-button{display:none}
+.player-num input::placeholder{color:rgba(255,255,255,.55);font-weight:400}
+/* Foot badges: bottom corners of the image */
+.foot-badge{position:absolute;bottom:2px;font-size:.44rem;font-weight:900;width:13px;height:13px;border-radius:2px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:rgba(0,0,0,.35);color:rgba(255,255,255,.38);z-index:4;transition:background .15s,color .15s}
+.foot-badge.foot-L{left:2px}
+.foot-badge.foot-R{right:2px}
 .foot-badge.foot-active.foot-L{background:#3b82f6;color:#fff}
 .foot-badge.foot-active.foot-R{background:#ef4444;color:#fff}
-.player-select{font-size:.48rem;flex:1;min-width:0;border:none;border-radius:3px;background:rgba(0,0,0,.75);color:#fff;padding:2px 2px;cursor:pointer;outline:none;text-align:center}
-.player-select option{background:#222;color:#fff}
+/* Name dropdown */
+.player-select{display:block;width:80px;font-size:.49rem;border:none;border-radius:3px;background:rgba(0,0,0,.75);color:#fff;padding:2px 3px;cursor:pointer;outline:none;text-align:center;box-sizing:border-box}
+.player-select option,.player-select optgroup{background:#222;color:#fff}
+/* Stats row */
 .player-stats{display:flex;align-items:center;justify-content:center;gap:3px;margin-top:3px}
 .stat-lbl{font-size:.42rem;color:rgba(255,255,255,.5);white-space:nowrap}
-.stat-val{font-size:.46rem;color:rgba(255,255,255,.88);white-space:nowrap;font-weight:600}
-.player-ht{width:24px;font-size:.44rem;border:none;border-radius:2px;background:rgba(0,0,0,.5);color:#fff;text-align:center;padding:1px 2px;outline:none;cursor:text}
+.stat-val{font-size:.46rem;color:rgba(255,255,255,.9);white-space:nowrap;font-weight:600}
+.player-ht{width:26px;font-size:.44rem;border:none;border-radius:2px;background:rgba(0,0,0,.5);color:#fff;text-align:center;padding:1px 2px;outline:none;cursor:text;-moz-appearance:textfield}
+.player-ht::-webkit-outer-spin-button,.player-ht::-webkit-inner-spin-button{display:none}
 .player-ht:focus{background:rgba(0,0,0,.85);box-shadow:0 0 0 1.5px rgba(255,255,255,.4)}
 .player-ht::placeholder{color:rgba(255,255,255,.35)}
 #pemOverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:9999;align-items:center;justify-content:center}
@@ -906,17 +917,17 @@ function buildField(lineup,color,teamId){
     div.style.left=p.x+'%';div.style.top=p.y+'%';
     div.style.setProperty('--cc',color);
     div.innerHTML=`
-      <div style="position:relative;display:inline-block">
-        <div class="player-rect" id="pr-${slotKey}-${idx}" onclick="openPEM('${slotKey}',${idx})">
+      <div class="player-rect-wrap">
+        <div class="player-rect" onclick="triggerImgUpload('${slotKey}',${idx})">
           <div class="player-ph">📷</div>
         </div>
-        <div class="player-num" id="pnum-${slotKey}-${idx}">${dispNum}</div>
-      </div>
-      <div class="player-name-row">
+        <div class="player-num">
+          <input id="pnum-${slotKey}-${idx}" type="text" inputmode="numeric" maxlength="2" value="${dispNum}" placeholder="#" title="Jersey Number" onchange="onNumChange(this,'${slotKey}',${idx})">
+        </div>
         <div class="foot-badge foot-L ${lActive?'foot-active':''}" id="fl-${slotKey}-${idx}" onclick="toggleFoot('${slotKey}',${idx},'L')">L</div>
-        <select class="player-select" id="psel-${slotKey}-${idx}" onchange="onPlayerSelect(this,'${slotKey}',${idx})">${opts}</select>
         <div class="foot-badge foot-R ${rActive?'foot-active':''}" id="fr-${slotKey}-${idx}" onclick="toggleFoot('${slotKey}',${idx},'R')">R</div>
       </div>
+      <select class="player-select" id="psel-${slotKey}-${idx}" onchange="onPlayerSelect(this,'${slotKey}',${idx})">${opts}</select>
       <div class="player-stats">
         <span class="stat-lbl">Age</span>
         <span class="stat-val" id="page-${slotKey}-${idx}">${ageStr}</span>
@@ -961,14 +972,20 @@ function onPlayerSelect(sel,slotKey,idx){
   const age=calcAge(opt?opt.getAttribute('data-dob'):'');
   const ageEl=document.getElementById(`page-${slotKey}-${idx}`);
   if(ageEl)ageEl.textContent=age!==null?String(age):'';
-  // height
+  // height auto-fill
   const hEl=document.getElementById(`ph-${slotKey}-${idx}`);
   if(hEl){const h=getGlobalHeight(name);if(h)hEl.value=h;}
-  // foot
+  // foot auto-fill
   updateFootDisplay(slotKey,idx,getGlobalFoot(name));
-  // jersey number
+  // jersey number auto-fill (input.value now)
   const numEl=document.getElementById(`pnum-${slotKey}-${idx}`);
-  if(numEl){const n=getGlobalNum(name);if(n)numEl.textContent=n;}
+  if(numEl){const n=getGlobalNum(name);if(n)numEl.value=n;}
+  savePlayerMeta(slotKey,idx);
+}
+
+function onNumChange(input,slotKey,idx){
+  const sel=document.getElementById(`psel-${slotKey}-${idx}`);
+  if(sel&&sel.value)setGlobalNum(sel.value,input.value);
   savePlayerMeta(slotKey,idx);
 }
 
@@ -988,12 +1005,27 @@ function savePlayerMeta(slotKey,idx){
   const name=sel?sel.value:'';
   if(sel)saved.name=name;
   if(h){saved.height=h.value;if(name)setGlobalHeight(name,h.value);}
-  if(numEl){saved.num=numEl.textContent;if(name&&saved.num)setGlobalNum(name,saved.num);}
+  if(numEl){saved.num=numEl.value;if(name&&saved.num)setGlobalNum(name,saved.num);}
   const lA=lEl?lEl.classList.contains('foot-active'):false;
   const rA=rEl?rEl.classList.contains('foot-active'):false;
   const foot=lA&&rA?'B':lA?'L':rA?'R':'';
   saved.foot=foot;if(name)setGlobalFoot(name,foot);
   localStorage.setItem(lsKey(slotKey,idx),JSON.stringify(saved));
+}
+
+function triggerImgUpload(slotKey,idx){
+  const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
+  inp.onchange=e=>{
+    const f=e.target.files[0];if(!f)return;
+    const r=new FileReader();r.onload=ev=>{
+      const rect=document.getElementById(`pr-${slotKey}-${idx}`)||document.querySelector(`#pr-${slotKey}-${idx}`);
+      const wrap=document.querySelector(`.player-rect-wrap`); // fallback unused
+      const target=document.querySelectorAll('.player-rect')[idx]||null;
+      // find by slot
+      const c=document.getElementById(`psel-${slotKey}-${idx}`)?.closest('.player-on-field')?.querySelector('.player-rect');
+      if(c){c.innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover">`;}
+    };r.readAsDataURL(f);
+  };inp.click();
 }
 
 // ── Player edit modal (Jersey # + Height) ─────────────────────────────────────
@@ -1023,7 +1055,7 @@ function savePEM(){
   localStorage.setItem(lsKey(_pemSlot,_pemIdx),JSON.stringify(saved));
   const numEl=document.getElementById(`pnum-${_pemSlot}-${_pemIdx}`);
   const hEl=document.getElementById(`ph-${_pemSlot}-${_pemIdx}`);
-  if(numEl&&num)numEl.textContent=num;
+  if(numEl&&num)numEl.value=num;
   if(hEl&&height)hEl.value=height;
   closePEM();
 }
