@@ -110,13 +110,19 @@ input[type=file]{display:none}
 .upload-lnk{font-size:.62rem;color:#aaa;cursor:pointer;text-decoration:underline;text-align:center;display:block;margin-top:3px}
 
 /* ── PAGE 2 ── */
-.p2-grid{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+.p2-grid{display:flex;gap:14px;align-items:flex-start}
+.pg2-field{flex:0 0 62%;min-width:0}
+.pg2-sidebar{flex:1;min-width:0;max-height:88vh;overflow-y:auto;padding-right:2px}
 .field-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
 .field-label{font-size:.72rem;font-weight:700;color:#555;text-transform:uppercase;letter-spacing:1px}
 .formation-badge{background:var(--cc,#1a3a6b);color:#fff;padding:3px 12px;border-radius:12px;font-size:.75rem;font-weight:700;letter-spacing:1px}
-
-/* Field – 105:68 ratio = 68/105 = 64.76% */
-.field-container{position:relative;width:100%;padding-top:64.76%;background:#2d8a4e;border-radius:6px;overflow:hidden;border:3px solid #1a5e34}
+/* Field – portrait 68:105 ratio = 105/68 = 154.41% */
+.field-container{position:relative;width:100%;padding-top:154.41%;background:#2d8a4e;border-radius:6px;overflow:hidden;border:3px solid #1a5e34}
+/* Sidebar */
+.sb-section{margin-bottom:14px}
+.sb-title{font-size:.64rem;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--cc,#1a3a6b);border-bottom:2px solid var(--cc,#1a3a6b);padding-bottom:3px;margin-bottom:6px}
+.sb-slots{display:flex;flex-wrap:wrap;gap:6px}
+.sb-slot{text-align:center}
 .field-markings{position:absolute;inset:0;pointer-events:none}
 .field-markings svg{width:100%;height:100%}
 .player-on-field{position:absolute;transform:translate(-50%,-50%);text-align:center;width:80px;z-index:10}
@@ -333,8 +339,8 @@ input[type=file]{display:none}
       </div>
     </div>
     <div class="p2-grid">
-      <!-- FIELD -->
-      <div>
+      <!-- FIELD (vertical) -->
+      <div class="pg2-field">
         <div id="squadError" style="display:none;background:#fee2e2;color:#991b1b;border:1px solid #fca5a5;border-radius:6px;padding:8px 12px;font-size:.72rem;font-weight:700;margin-bottom:8px"></div>
         <div class="field-label-row">
           <span class="field-label">Possible Line-up</span>
@@ -342,41 +348,44 @@ input[type=file]{display:none}
         </div>
         <div class="field-container">
           <div class="field-markings">
-            <svg viewBox="0 0 105 68" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-              <rect x="0" y="0" width="105" height="68" fill="#2d8a4e"/>
-              <!-- Grass stripes -->
-              <rect x="0" y="0" width="10.5" height="68" fill="rgba(0,0,0,.06)"/>
-              <rect x="21" y="0" width="10.5" height="68" fill="rgba(0,0,0,.06)"/>
-              <rect x="42" y="0" width="10.5" height="68" fill="rgba(0,0,0,.06)"/>
-              <rect x="63" y="0" width="10.5" height="68" fill="rgba(0,0,0,.06)"/>
-              <rect x="84" y="0" width="10.5" height="68" fill="rgba(0,0,0,.06)"/>
+            <svg viewBox="0 0 68 105" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+              <rect x="0" y="0" width="68" height="105" fill="#2d8a4e"/>
+              <!-- Grass stripes (horizontal) -->
+              <rect x="0" y="0" width="68" height="10.5" fill="rgba(0,0,0,.06)"/>
+              <rect x="0" y="21" width="68" height="10.5" fill="rgba(0,0,0,.06)"/>
+              <rect x="0" y="42" width="68" height="10.5" fill="rgba(0,0,0,.06)"/>
+              <rect x="0" y="63" width="68" height="10.5" fill="rgba(0,0,0,.06)"/>
+              <rect x="0" y="84" width="68" height="10.5" fill="rgba(0,0,0,.06)"/>
               <!-- Outer border -->
-              <rect x="2" y="2" width="101" height="64" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".7"/>
+              <rect x="1" y="1" width="66" height="103" fill="none" stroke="rgba(255,255,255,.7)" stroke-width=".7"/>
               <!-- Centre line -->
-              <line x1="52.5" y1="2" x2="52.5" y2="66" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <line x1="1" y1="52.5" x2="67" y2="52.5" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
               <!-- Centre circle -->
-              <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
-              <circle cx="52.5" cy="34" r=".5" fill="rgba(255,255,255,.7)"/>
-              <!-- Penalty areas -->
-              <rect x="2" y="13.84" width="16.5" height="40.32" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
-              <rect x="86.5" y="13.84" width="16.5" height="40.32" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
-              <!-- Goal areas -->
-              <rect x="2" y="24.84" width="5.5" height="18.32" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
-              <rect x="97.5" y="24.84" width="5.5" height="18.32" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
-              <!-- Goals -->
-              <rect x=".3" y="28.84" width="1.8" height="10.32" fill="rgba(255,255,255,.3)" stroke="rgba(255,255,255,.8)" stroke-width=".6"/>
-              <rect x="102.9" y="28.84" width="1.8" height="10.32" fill="rgba(255,255,255,.3)" stroke="rgba(255,255,255,.8)" stroke-width=".6"/>
-              <!-- Penalty spots -->
-              <circle cx="11" cy="34" r=".5" fill="rgba(255,255,255,.7)"/>
-              <circle cx="94" cy="34" r=".5" fill="rgba(255,255,255,.7)"/>
-              <!-- Penalty arcs -->
-              <path d="M 18.5 26 A 9.15 9.15 0 0 1 18.5 42" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
-              <path d="M 86.5 26 A 9.15 9.15 0 0 0 86.5 42" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <circle cx="34" cy="52.5" r="9.15" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <circle cx="34" cy="52.5" r=".5" fill="rgba(255,255,255,.7)"/>
+              <!-- TOP penalty area (attacking) -->
+              <rect x="13.84" y="1" width="40.32" height="16.5" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <!-- TOP goal area -->
+              <rect x="24.84" y="1" width="18.32" height="5.5" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <!-- TOP goal -->
+              <rect x="28.84" y=".2" width="10.32" height="1.5" fill="rgba(255,255,255,.3)" stroke="rgba(255,255,255,.8)" stroke-width=".5"/>
+              <!-- TOP penalty spot + arc -->
+              <circle cx="34" cy="11" r=".5" fill="rgba(255,255,255,.7)"/>
+              <path d="M 25.5 17.5 A 9.15 9.15 0 0 1 42.5 17.5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
+              <!-- BOTTOM penalty area (defensive) -->
+              <rect x="13.84" y="87.5" width="40.32" height="16.5" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <!-- BOTTOM goal area -->
+              <rect x="24.84" y="98.5" width="18.32" height="5.5" fill="none" stroke="rgba(255,255,255,.6)" stroke-width=".5"/>
+              <!-- BOTTOM goal -->
+              <rect x="28.84" y="103.3" width="10.32" height="1.5" fill="rgba(255,255,255,.3)" stroke="rgba(255,255,255,.8)" stroke-width=".5"/>
+              <!-- BOTTOM penalty spot + arc -->
+              <circle cx="34" cy="94" r=".5" fill="rgba(255,255,255,.7)"/>
+              <path d="M 25.5 87.5 A 9.15 9.15 0 0 0 42.5 87.5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
               <!-- Corner arcs -->
-              <path d="M 2 5 A 3 3 0 0 1 5 2" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
-              <path d="M 100 2 A 3 3 0 0 1 103 5" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
-              <path d="M 2 63 A 3 3 0 0 0 5 66" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
-              <path d="M 100 66 A 3 3 0 0 0 103 63" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
+              <path d="M 1 4 A 3 3 0 0 1 4 1" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
+              <path d="M 64 1 A 3 3 0 0 1 67 4" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
+              <path d="M 1 101 A 3 3 0 0 0 4 104" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
+              <path d="M 64 104 A 3 3 0 0 0 67 101" fill="none" stroke="rgba(255,255,255,.5)" stroke-width=".5"/>
             </svg>
           </div>
           <div id="playersOnField"></div>
@@ -388,8 +397,14 @@ input[type=file]{display:none}
           <div class="alt-row"><div class="alt-num">3</div><div contenteditable="true">Alternative 3 – possible second-half substitutions</div></div>
         </div>
       </div>
-      <!-- KEY PLAYERS -->
-      <div class="kp-col" id="keyPlayersCol"></div>
+      <!-- SIDEBAR -->
+      <div class="pg2-sidebar" id="pg2Sidebar">
+        <div class="sb-section"><div class="sb-title">Goalkeepers</div><div class="sb-slots" id="sb-gk"></div></div>
+        <div class="sb-section"><div class="sb-title">Defenders</div><div class="sb-slots" id="sb-def"></div></div>
+        <div class="sb-section"><div class="sb-title">Midfielders</div><div class="sb-slots" id="sb-mid"></div></div>
+        <div class="sb-section"><div class="sb-title">Forwards</div><div class="sb-slots" id="sb-fwd"></div></div>
+        <div class="sb-section"><div class="sb-title">Players Out</div><div class="sb-slots" id="sb-out"></div></div>
+      </div>
     </div>
   </div>
 
@@ -882,60 +897,88 @@ function buildField(lineup,color,teamId){
   const squad=matchedKey?(squadData[matchedKey].players||[]):[];
   const slotKey=matchedKey||effectiveId;
 
-  // ── Build position groups ─────────────────────────────────────────────────
+  // ── Render each player slot (vertical: swap x↔y) ─────────────────────────
+  lineup.players.forEach((p,idx)=>{
+    const div=document.createElement('div');
+    div.className='player-on-field';
+    div.style.left=p.y+'%';   // landscape y → portrait x
+    div.style.top=p.x+'%';    // landscape x → portrait y
+    div.style.setProperty('--cc',color);
+    div.innerHTML=buildSlotHTML(slotKey,idx,squad,color);
+    container.appendChild(div);
+  });
+}
+
+// ── Shared slot HTML builder ──────────────────────────────────────────────────
+function buildSlotHTML(slotKey,idx,squad,color){
+  const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
+  const selName=saved.name||'';
+  const dispNum=saved.num||getGlobalNum(selName)||'';
+  const dispH=saved.height||getGlobalHeight(selName)||'';
+  const foot=selName?getGlobalFoot(selName):(saved.foot||'');
+  const lActive=foot==='L'||foot==='B';
+  const rActive=foot==='R'||foot==='B';
+
   const posOrder=['Goalkeeper','Defence','Midfield','Offence'];
   const byPos={};
   squad.forEach(p=>{const k=p.position||'Other';(byPos[k]=byPos[k]||[]).push(p);});
+  let opts=`<option value="">— Name —</option>`;
+  posOrder.forEach(pos=>{
+    const list=byPos[pos];if(!list||!list.length)return;
+    opts+=`<optgroup label="${pos}">`;
+    list.forEach(pl=>{opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${pl.name===selName?'selected':''}>${pl.name}</option>`;});
+    opts+=`</optgroup>`;
+  });
+  Object.keys(byPos).filter(k=>!posOrder.includes(k)).forEach(pos=>{
+    byPos[pos].forEach(pl=>{opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${pl.name===selName?'selected':''}>${pl.name}</option>`;});
+  });
 
-  // ── Render each player slot ───────────────────────────────────────────────
-  lineup.players.forEach((p,idx)=>{
-    const saved=JSON.parse(localStorage.getItem(lsKey(slotKey,idx))||'{}');
-    const selName=saved.name||'';
-    const dispNum=saved.num!==undefined?saved.num:getGlobalNum(selName)||p.num;
-    const dispH=saved.height||getGlobalHeight(selName)||'';
-    const foot=selName?getGlobalFoot(selName):(saved.foot||'');
-    const lActive=foot==='L'||foot==='B';
-    const rActive=foot==='R'||foot==='B';
+  const sp=squad.find(x=>x.name===selName);
+  const age=sp?calcAge(sp.dateOfBirth):null;
+  const ageStr=age!==null?String(age):'';
 
-    let opts=`<option value="">— Name —</option>`;
-    posOrder.forEach(pos=>{
-      const list=byPos[pos];if(!list||!list.length)return;
-      opts+=`<optgroup label="${pos}">`;
-      list.forEach(pl=>{opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${pl.name===selName?'selected':''}>${pl.name}</option>`;});
-      opts+=`</optgroup>`;
-    });
-    Object.keys(byPos).filter(k=>!posOrder.includes(k)).forEach(pos=>{
-      byPos[pos].forEach(pl=>{opts+=`<option value="${pl.name}" data-dob="${pl.dateOfBirth||''}" ${pl.name===selName?'selected':''}>${pl.name}</option>`;});
-    });
-
-    const sp=squad.find(x=>x.name===selName);
-    const age=sp?calcAge(sp.dateOfBirth):null;
-    const ageStr=age!==null?String(age):'';
-
-    const div=document.createElement('div');
-    div.className='player-on-field';
-    div.style.left=p.x+'%';div.style.top=p.y+'%';
-    div.style.setProperty('--cc',color);
-    div.innerHTML=`
-      <div class="player-rect-wrap">
-        <div class="player-rect" onclick="triggerImgUpload('${slotKey}',${idx})">
-          <div class="player-ph">📷</div>
-        </div>
-        <div class="player-num">
-          <input id="pnum-${slotKey}-${idx}" type="text" inputmode="numeric" maxlength="2" value="${dispNum}" placeholder="#" title="Jersey Number" onchange="onNumChange(this,'${slotKey}',${idx})">
-        </div>
-        <div class="foot-badge foot-L ${lActive?'foot-active':''}" id="fl-${slotKey}-${idx}" onclick="toggleFoot('${slotKey}',${idx},'L')">L</div>
-        <div class="foot-badge foot-R ${rActive?'foot-active':''}" id="fr-${slotKey}-${idx}" onclick="toggleFoot('${slotKey}',${idx},'R')">R</div>
+  return `
+    <div class="player-rect-wrap">
+      <div class="player-rect" onclick="triggerImgUpload('${slotKey}',${idx})">
+        <div class="player-ph">📷</div>
       </div>
-      <select class="player-select" id="psel-${slotKey}-${idx}" onchange="onPlayerSelect(this,'${slotKey}',${idx})">${opts}</select>
-      <div class="player-stats">
-        <span class="stat-lbl">Age</span>
-        <span class="stat-val" id="page-${slotKey}-${idx}">${ageStr}</span>
-        <span class="stat-lbl">·</span>
-        <input class="player-ht" id="ph-${slotKey}-${idx}" type="number" min="150" max="220" placeholder="—" value="${dispH}" title="Height (cm)" onchange="onHeightChange(this,'${slotKey}',${idx})">
-        <span class="stat-lbl">cm</span>
-      </div>`;
-    container.appendChild(div);
+      <div class="player-num"><input id="pnum-${slotKey}-${idx}" type="text" inputmode="numeric" maxlength="2" value="${dispNum}" placeholder="#" title="Jersey Number" onchange="onNumChange(this,'${slotKey}',${idx})"></div>
+      <div class="foot-badge foot-L ${lActive?'foot-active':''}" id="fl-${slotKey}-${idx}" onclick="toggleFoot('${slotKey}',${idx},'L')">L</div>
+      <div class="foot-badge foot-R ${rActive?'foot-active':''}" id="fr-${slotKey}-${idx}" onclick="toggleFoot('${slotKey}',${idx},'R')">R</div>
+    </div>
+    <select class="player-select" id="psel-${slotKey}-${idx}" onchange="onPlayerSelect(this,'${slotKey}',${idx})">${opts}</select>
+    <div class="player-stats">
+      <span class="stat-lbl">Age</span><span class="stat-val" id="page-${slotKey}-${idx}">${ageStr}</span>
+      <span class="stat-lbl">·</span>
+      <input class="player-ht" id="ph-${slotKey}-${idx}" type="number" min="150" max="220" placeholder="—" value="${dispH}" title="Height (cm)" onchange="onHeightChange(this,'${slotKey}',${idx})">
+      <span class="stat-lbl">cm</span>
+    </div>`;
+}
+
+// ── Sidebar ───────────────────────────────────────────────────────────────────
+const SB_SECTIONS=[
+  {id:'gk',  pos:['Goalkeeper'], slots:2},
+  {id:'def', pos:['Defence'],    slots:5},
+  {id:'mid', pos:['Midfield'],   slots:5},
+  {id:'fwd', pos:['Offence'],    slots:4},
+  {id:'out', pos:[],             slots:3},
+];
+
+function buildSidebar(teamId,color){
+  SB_SECTIONS.forEach(sec=>{
+    const container=document.getElementById(`sb-${sec.id}`);
+    if(!container)return;
+    container.innerHTML='';
+    const fullSquad=(squadData[teamId]||{}).players||[];
+    const filtered=sec.pos.length?fullSquad.filter(p=>sec.pos.includes(p.position)):fullSquad;
+    for(let i=0;i<sec.slots;i++){
+      const sk=`sb-${teamId}-${sec.id}`;
+      const div=document.createElement('div');
+      div.className='sb-slot';
+      div.style.setProperty('--cc',color);
+      div.innerHTML=buildSlotHTML(sk,i,filtered,color);
+      container.appendChild(div);
+    }
   });
 }
 
@@ -1132,6 +1175,7 @@ async function openClub(club){
   buildLast5(club.form);
   await squadReady;
   buildField(club.lineup,c,club.id);
+  buildSidebar(club.id,c);
   buildKeyPlayers(club.keyPlayers,c);
   document.getElementById('dashboard').style.display='none';
   document.getElementById('twopager').style.display='block';
